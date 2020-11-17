@@ -29,36 +29,46 @@ namespace Program
         {
             if (txtID.Text != null || txtPW.Text != null)
             {
-                if (txtID.Text == "satu" && txtPW.Text == "123")
+                var data = koneksi.login(txtID.Text);
+                if (data[1] == txtPW.Text)
                 {
                     global.id = txtID.Text;
-                    global.id_type = 1;
-                    form_app.app.panel_utama.Controls["form_login"].Hide();
-                    form_app.app.panel_utama.Controls["form_utama"].Show();
-                }
-                else if (txtID.Text == "dua" && txtPW.Text == "123")
-                {
-                    global.id = txtID.Text;
-                    global.id_type = 2;
-                    form_app.app.panel_utama.Controls["form_login"].Hide();
-                    form_app.app.panel_utama.Controls["form_utama"].Show();
-                }
-                else if (txtID.Text == "tiga" && txtPW.Text == "123")
-                {
-                    global.id = txtID.Text;
-                    global.id_type = 3;
-                    form_app.app.panel_utama.Controls["form_login"].Hide();
-                    form_app.app.panel_utama.Controls["form_utama"].Show();
-                }
-                else if (txtID.Text == "empat" && txtPW.Text == "123")
-                {
-                    global.id = txtID.Text;
-                    global.id_type = 4;
+                    global.id_nama = data[0];
+                    global.id_type = int.Parse(data[2]);
                     form_app.app.panel_utama.Controls["form_login"].Hide();
                     form_app.app.panel_utama.Controls["form_utama"].Show();
                 }
                 else
                 { MessageBox.Show("user dan password salah !!!!"); }
+
+                //if (txtID.Text == "satu" && txtPW.Text == "123")
+                //{
+                //    global.id = txtID.Text;
+                //    global.id_type = 1;
+                //    form_app.app.panel_utama.Controls["form_login"].Hide();
+                //    form_app.app.panel_utama.Controls["form_utama"].Show();
+                //}
+                //else if (txtID.Text == "dua" && txtPW.Text == "123")
+                //{
+                //    global.id = txtID.Text;
+                //    global.id_type = 2;
+                //    form_app.app.panel_utama.Controls["form_login"].Hide();
+                //    form_app.app.panel_utama.Controls["form_utama"].Show();
+                //}
+                //else if (txtID.Text == "tiga" && txtPW.Text == "123")
+                //{
+                //    global.id = txtID.Text;
+                //    global.id_type = 3;
+                //    form_app.app.panel_utama.Controls["form_login"].Hide();
+                //    form_app.app.panel_utama.Controls["form_utama"].Show();
+                //}
+                //else if (txtID.Text == "empat" && txtPW.Text == "123")
+                //{
+                //    global.id = txtID.Text;
+                //    global.id_type = 4;
+                //    form_app.app.panel_utama.Controls["form_login"].Hide();
+                //    form_app.app.panel_utama.Controls["form_utama"].Show();
+                //}
             }
         }
 

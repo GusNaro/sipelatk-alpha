@@ -12,32 +12,26 @@ namespace Program
 
         }
 
-        public static void tampilkan_button(string type)
+        public static void tampilkan_button()
         {
-            bool[] value = { true, false, false, false, false, false };
-            string[] nama = { "LOGIN", "", "", "", "", "" };
-
-            if (type == "LOGIN")
-            {
-                value = new bool[] { true, false, false, false, false, false };
-                nama = new string[] { "BERANDA", "", "", "", "", "" };
-            }
+            bool[] value = { true, true, false, false, false, true };
+            string[] nama = { "BERANDA", "LOGIN", "", "", "", "KELUAR" };
 
             switch (global.id_type)
             {
-                case 1:
+                case global.id_type_admin:
                     value = new bool[] { true, true, true, true, true, true };
                     nama = new string[] { "BERANDA", "USER", "BARANG", "INVENTARIS", "LAPORAN", "KELUAR" };
                     break;
-                case 2:
+                case global.id_type_barang:
                     value = new bool[] { true, true, false, false, false, true };
                     nama = new string[] { "BERANDA", "BARANG", "", "", "", "KELUAR" };
                     break;
-                case 3:
+                case global.id_type_inventaris:
                     value = new bool[] { true, true, true, false, false, true };
                     nama = new string[] { "BERANDA", "INVENTARIS", "LAPORAN", "", "", "KELUAR" };
                     break;
-                case 4:
+                case global.id_type_laporan:
                     value = new bool[] { true, true, false, false, false, true };
                     nama = new string[] { "BERANDA", "LAPORAN", "", "", "", "KELUAR" };
                     break;

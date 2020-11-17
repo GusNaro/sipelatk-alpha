@@ -122,7 +122,8 @@ namespace Program
 
         private void button6_Click(object sender, EventArgs e)
         {
-            tampilkan(button6.Text);
+            if (global.id == null) { this.Close(); }
+            else { tampilkan(button6.Text); }
         }
 
 
@@ -180,7 +181,8 @@ namespace Program
                     app.panel_utama.Controls["form_utama"].Show();
                     break;
                 case "KELUAR":
-                    global.id = "";
+                    global.id = null;
+                    global.id_nama = null;
                     global.id_type = 0;
                     app.panel_utama.Controls["form_user"].Hide();
                     app.panel_utama.Controls["form_barang"].Hide();
