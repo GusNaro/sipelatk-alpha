@@ -22,12 +22,12 @@ namespace Program
 
             txtID.Text = null;
             txtPW.Text = null;
-            method.tampilkan_button("LOGIN");
+            method.tampilkan_button();
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (txtID.Text != null || txtPW.Text != null)
+            if (txtID.Text != "" || txtPW.Text != "")
             {
                 var data = koneksi.login(txtID.Text);
                 if (data[1] == txtPW.Text)
@@ -35,6 +35,7 @@ namespace Program
                     global.id = txtID.Text;
                     global.id_nama = data[0];
                     global.id_type = int.Parse(data[2]);
+                    form_app.app.panel_button_top("BERANDA");
                     form_app.app.panel_utama.Controls["form_login"].Hide();
                     form_app.app.panel_utama.Controls["form_utama"].Show();
                 }

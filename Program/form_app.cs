@@ -11,13 +11,9 @@ namespace Program
 {
     public partial class form_app : Form
     {
-        private static form_app aplikasi;
+        #region PUBLIC VARIABLE
 
-        //==============================
-        public form_app()
-        {
-            InitializeComponent();
-        }
+        private static form_app aplikasi;
 
         public static form_app app
         {
@@ -55,6 +51,24 @@ namespace Program
             set { pnl_utama = value; }
             get { return pnl_utama; }
         }
+
+        public void panel_button_top(string lokasi)
+        {
+            if (lokasi == "BERANDA")
+            { pnl_btn.Top = button1.Top; }
+            else if (lokasi == "LOGIN")
+            { pnl_btn.Top = button2.Top;  }
+        }
+
+        #endregion
+
+        
+        public form_app()
+        {
+            InitializeComponent();
+        }
+
+
 
         private void form_app_Load(object sender, EventArgs e)
         {
@@ -96,32 +110,37 @@ namespace Program
 
         private void button1_Click(object sender, EventArgs e)
         {
+            pnl_btn.Top = button1.Top;
             tampilkan(button1.Text);
-            //MessageBox.Show(koneksi.str());
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            pnl_btn.Top = button2.Top;
             tampilkan(button2.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            pnl_btn.Top = button3.Top;
             tampilkan(button3.Text);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            pnl_btn.Top = button4.Top;
             tampilkan(button4.Text);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            pnl_btn.Top = button5.Top;
             tampilkan(button5.Text);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            panel_button_top("LOGIN");
             if (global.id == null) { this.Close(); }
             else { tampilkan(button6.Text); }
         }

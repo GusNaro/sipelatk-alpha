@@ -20,7 +20,7 @@ namespace Program
         {
             base.OnVisibleChanged(e);
 
-            method.tampilkan_button("");
+            method.tampilkan_button();
         }
     }
 }

@@ -37,6 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_utama = new System.Windows.Forms.Panel();
+            this.pnl_btn = new System.Windows.Forms.Panel();
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // pnl_menu
             // 
             this.pnl_menu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_menu.Controls.Add(this.pnl_btn);
             this.pnl_menu.Controls.Add(this.button6);
             this.pnl_menu.Controls.Add(this.button5);
             this.pnl_menu.Controls.Add(this.button4);
@@ -137,6 +139,14 @@
             this.pnl_utama.Size = new System.Drawing.Size(1150, 720);
             this.pnl_utama.TabIndex = 1;
             // 
+            // pnl_btn
+            // 
+            this.pnl_btn.BackColor = System.Drawing.Color.Red;
+            this.pnl_btn.Location = new System.Drawing.Point(115, 131);
+            this.pnl_btn.Name = "pnl_btn";
+            this.pnl_btn.Size = new System.Drawing.Size(8, 50);
+            this.pnl_btn.TabIndex = 0;
+            // 
             // form_app
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +176,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnl_btn;
     }
 }
 

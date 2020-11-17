@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<ArrayOfServer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <server>
+    <sql_svr>localhost</sql_svr>
+    <sql_prt>3306</sql_prt>
+    <sql_db>barang</sql_db>
+    <sql_id>drakorea</sql_id>
+    <sql_pw>lol123!</sql_pw>
+  </server>
+</ArrayOfServer>

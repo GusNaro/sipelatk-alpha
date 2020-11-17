@@ -28,3 +28,4 @@ C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.fo
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_utama.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.Properties.Resources.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csproj.GenerateResource.Cache
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\server.dat
