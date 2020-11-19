@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
 
 namespace Program
 {
@@ -16,7 +17,7 @@ namespace Program
         public static string id_nama;
         public static int id_type;
 
-        public static string conn_string = method.xml_server_load();
-        //public static string conn_string = "server=localhost;port=3306;database=barang;user=drakorea;password=lol123!";
+        //public static string conn_string = method.xml_server_load();
+        public static string conn_string = @"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\data.mdf;Integrated Security=True;User Instance=True";
     }
 }

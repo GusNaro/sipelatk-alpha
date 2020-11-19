@@ -37,7 +37,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_utama = new System.Windows.Forms.Panel();
+<<<<<<< Updated upstream
             this.pnl_btn = new System.Windows.Forms.Panel();
+=======
+            this.lbl_user = new System.Windows.Forms.Label();
+>>>>>>> Stashed changes
             this.pnl_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +49,7 @@
             // pnl_menu
             // 
             this.pnl_menu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_menu.Controls.Add(this.lbl_user);
             this.pnl_menu.Controls.Add(this.pnl_btn);
             this.pnl_menu.Controls.Add(this.button6);
             this.pnl_menu.Controls.Add(this.button5);
@@ -59,9 +64,24 @@
             this.pnl_menu.Size = new System.Drawing.Size(130, 720);
             this.pnl_menu.TabIndex = 0;
             // 
+<<<<<<< Updated upstream
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(4, 411);
+=======
+            // pnl_btn
+            // 
+            this.pnl_btn.BackColor = System.Drawing.Color.Red;
+            this.pnl_btn.Location = new System.Drawing.Point(115, 185);
+            this.pnl_btn.Name = "pnl_btn";
+            this.pnl_btn.Size = new System.Drawing.Size(8, 50);
+            this.pnl_btn.TabIndex = 0;
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(4, 465);
+>>>>>>> Stashed changes
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(110, 50);
             this.button6.TabIndex = 6;
@@ -71,7 +91,12 @@
             // 
             // button5
             // 
+<<<<<<< Updated upstream
             this.button5.Location = new System.Drawing.Point(4, 355);
+=======
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(4, 409);
+>>>>>>> Stashed changes
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(110, 50);
             this.button5.TabIndex = 5;
@@ -81,7 +106,12 @@
             // 
             // button4
             // 
+<<<<<<< Updated upstream
             this.button4.Location = new System.Drawing.Point(4, 299);
+=======
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(4, 353);
+>>>>>>> Stashed changes
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(110, 50);
             this.button4.TabIndex = 4;
@@ -91,7 +121,12 @@
             // 
             // button3
             // 
+<<<<<<< Updated upstream
             this.button3.Location = new System.Drawing.Point(4, 243);
+=======
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(4, 297);
+>>>>>>> Stashed changes
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(110, 50);
             this.button3.TabIndex = 3;
@@ -101,7 +136,12 @@
             // 
             // button2
             // 
+<<<<<<< Updated upstream
             this.button2.Location = new System.Drawing.Point(4, 187);
+=======
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(4, 241);
+>>>>>>> Stashed changes
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 50);
             this.button2.TabIndex = 2;
@@ -111,7 +151,12 @@
             // 
             // button1
             // 
+<<<<<<< Updated upstream
             this.button1.Location = new System.Drawing.Point(4, 131);
+=======
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(4, 185);
+>>>>>>> Stashed changes
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 50);
             this.button1.TabIndex = 1;
@@ -120,6 +165,7 @@
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
+<<<<<<< Updated upstream
             // 
             this.pictureBox1.Image = global::Program.Properties.Resources.blur_branches_daylight_355296;
             this.pictureBox1.InitialImage = null;
@@ -140,12 +186,32 @@
             this.pnl_utama.TabIndex = 1;
             // 
             // pnl_btn
+=======
+>>>>>>> Stashed changes
             // 
             this.pnl_btn.BackColor = System.Drawing.Color.Red;
             this.pnl_btn.Location = new System.Drawing.Point(115, 131);
             this.pnl_btn.Name = "pnl_btn";
             this.pnl_btn.Size = new System.Drawing.Size(8, 50);
             this.pnl_btn.TabIndex = 0;
+            // 
+            // pnl_utama
+            // 
+            this.pnl_utama.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_utama.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_utama.Location = new System.Drawing.Point(130, 0);
+            this.pnl_utama.Name = "pnl_utama";
+            this.pnl_utama.Size = new System.Drawing.Size(1150, 720);
+            this.pnl_utama.TabIndex = 1;
+            // 
+            // lbl_user
+            // 
+            this.lbl_user.Location = new System.Drawing.Point(4, 131);
+            this.lbl_user.Name = "lbl_user";
+            this.lbl_user.Size = new System.Drawing.Size(120, 45);
+            this.lbl_user.TabIndex = 7;
+            this.lbl_user.Text = "label1";
+            this.lbl_user.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // form_app
             // 
@@ -177,6 +243,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnl_btn;
+        private System.Windows.Forms.Label lbl_user;
     }
 }
 

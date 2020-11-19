@@ -55,9 +55,15 @@ namespace Program
         public void panel_button_top(string lokasi)
         {
             if (lokasi == "BERANDA")
-            { pnl_btn.Top = button1.Top; }
+            {
+                pnl_btn.Top = button1.Top;
+                lbl_user.Text = global.id_nama;
+            }
             else if (lokasi == "LOGIN")
-            { pnl_btn.Top = button2.Top;  }
+            {
+                pnl_btn.Top = button2.Top;
+                lbl_user.Text = "[ USER ]";
+            }
         }
 
         #endregion
@@ -66,6 +72,7 @@ namespace Program
         public form_app()
         {
             InitializeComponent();
+            lbl_user.Text = "[ USER ]";
         }
 
 

@@ -38,6 +38,7 @@ namespace Program
                     form_app.app.panel_button_top("BERANDA");
                     form_app.app.panel_utama.Controls["form_login"].Hide();
                     form_app.app.panel_utama.Controls["form_utama"].Show();
+                   
                 }
                 else
                 { MessageBox.Show("user dan password salah !!!!"); }
