@@ -28,95 +28,164 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.txtKet = new System.Windows.Forms.TextBox();
+            this.btnSimpan = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnHapus = new System.Windows.Forms.Button();
+            this.dgvBarang = new System.Windows.Forms.DataGridView();
+            this.cmbNamaBarang = new System.Windows.Forms.ComboBox();
+            this.btnPindah = new System.Windows.Forms.Button();
+            this.dtpTanggal = new System.Windows.Forms.DateTimePicker();
+            this.lblSatuan = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txtIdB = new System.Windows.Forms.TextBox();
+            this.txtNamaB = new System.Windows.Forms.TextBox();
+            this.txtSatuanB = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtQty
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(402, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtQty.Location = new System.Drawing.Point(139, 93);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(200, 20);
+            this.txtQty.TabIndex = 0;
             // 
-            // textBox2
+            // txtKet
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(402, 20);
-            this.textBox2.TabIndex = 0;
+            this.txtKet.Location = new System.Drawing.Point(139, 119);
+            this.txtKet.Multiline = true;
+            this.txtKet.Name = "txtKet";
+            this.txtKet.Size = new System.Drawing.Size(402, 64);
+            this.txtKet.TabIndex = 0;
             // 
-            // textBox3
+            // btnSimpan
             // 
-            this.textBox3.Location = new System.Drawing.Point(139, 98);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(402, 20);
-            this.textBox3.TabIndex = 0;
+            this.btnSimpan.Location = new System.Drawing.Point(398, 192);
+            this.btnSimpan.Name = "btnSimpan";
+            this.btnSimpan.Size = new System.Drawing.Size(130, 23);
+            this.btnSimpan.TabIndex = 1;
+            this.btnSimpan.Text = "SIMPAN";
+            this.btnSimpan.UseVisualStyleBackColor = true;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
-            // textBox4
+            // btnUpdate
             // 
-            this.textBox4.Location = new System.Drawing.Point(139, 133);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(402, 20);
-            this.textBox4.TabIndex = 0;
+            this.btnUpdate.Location = new System.Drawing.Point(534, 192);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(130, 23);
+            this.btnUpdate.TabIndex = 2;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // button1
+            // btnHapus
             // 
-            this.button1.Location = new System.Drawing.Point(139, 173);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnHapus.Location = new System.Drawing.Point(670, 192);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(130, 23);
+            this.btnHapus.TabIndex = 3;
+            this.btnHapus.Text = "HAPUS";
+            this.btnHapus.UseVisualStyleBackColor = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
-            // button2
+            // dgvBarang
             // 
-            this.button2.Location = new System.Drawing.Point(275, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.dgvBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBarang.Location = new System.Drawing.Point(23, 221);
+            this.dgvBarang.Name = "dgvBarang";
+            this.dgvBarang.ReadOnly = true;
+            this.dgvBarang.Size = new System.Drawing.Size(1088, 441);
+            this.dgvBarang.TabIndex = 4;
+            this.dgvBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_Click);
             // 
-            // button3
+            // cmbNamaBarang
             // 
-            this.button3.Location = new System.Drawing.Point(411, 173);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.cmbNamaBarang.FormattingEnabled = true;
+            this.cmbNamaBarang.Location = new System.Drawing.Point(139, 39);
+            this.cmbNamaBarang.Name = "cmbNamaBarang";
+            this.cmbNamaBarang.Size = new System.Drawing.Size(402, 21);
+            this.cmbNamaBarang.TabIndex = 5;
+            this.cmbNamaBarang.SelectedIndexChanged += new System.EventHandler(this.cmbNamaBarang_SelectedIndexChanged);
             // 
-            // dataGridView1
+            // btnPindah
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 221);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1088, 441);
-            this.dataGridView1.TabIndex = 4;
+            this.btnPindah.Location = new System.Drawing.Point(548, 39);
+            this.btnPindah.Name = "btnPindah";
+            this.btnPindah.Size = new System.Drawing.Size(109, 74);
+            this.btnPindah.TabIndex = 6;
+            this.btnPindah.Text = ">>>";
+            this.btnPindah.UseVisualStyleBackColor = true;
+            this.btnPindah.Click += new System.EventHandler(this.btnPindah_Click);
+            // 
+            // dtpTanggal
+            // 
+            this.dtpTanggal.Location = new System.Drawing.Point(139, 67);
+            this.dtpTanggal.Name = "dtpTanggal";
+            this.dtpTanggal.Size = new System.Drawing.Size(200, 20);
+            this.dtpTanggal.TabIndex = 7;
+            // 
+            // lblSatuan
+            // 
+            this.lblSatuan.AutoSize = true;
+            this.lblSatuan.Location = new System.Drawing.Point(345, 96);
+            this.lblSatuan.Name = "lblSatuan";
+            this.lblSatuan.Size = new System.Drawing.Size(35, 13);
+            this.lblSatuan.TabIndex = 8;
+            this.lblSatuan.Text = "label1";
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(140, 20);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(35, 13);
+            this.lblID.TabIndex = 9;
+            this.lblID.Text = "label1";
+            // 
+            // txtIdB
+            // 
+            this.txtIdB.Location = new System.Drawing.Point(822, 20);
+            this.txtIdB.Name = "txtIdB";
+            this.txtIdB.Size = new System.Drawing.Size(100, 20);
+            this.txtIdB.TabIndex = 10;
+            // 
+            // txtNamaB
+            // 
+            this.txtNamaB.Location = new System.Drawing.Point(822, 47);
+            this.txtNamaB.Name = "txtNamaB";
+            this.txtNamaB.Size = new System.Drawing.Size(100, 20);
+            this.txtNamaB.TabIndex = 11;
+            // 
+            // txtSatuanB
+            // 
+            this.txtSatuanB.Location = new System.Drawing.Point(822, 74);
+            this.txtSatuanB.Name = "txtSatuanB";
+            this.txtSatuanB.Size = new System.Drawing.Size(100, 20);
+            this.txtSatuanB.TabIndex = 12;
             // 
             // form_barang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Size = new System.Drawing.Size(1150, 720);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSatuanB);
+            this.Controls.Add(this.txtNamaB);
+            this.Controls.Add(this.txtIdB);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblSatuan);
+            this.Controls.Add(this.dtpTanggal);
+            this.Controls.Add(this.btnPindah);
+            this.Controls.Add(this.cmbNamaBarang);
+            this.Controls.Add(this.dgvBarang);
+            this.Controls.Add(this.btnHapus);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnSimpan);
+            this.Controls.Add(this.txtKet);
+            this.Controls.Add(this.txtQty);
             this.Name = "form_barang";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(1150, 720);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,13 +193,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.TextBox txtKet;
+        private System.Windows.Forms.Button btnSimpan;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnHapus;
+        private System.Windows.Forms.DataGridView dgvBarang;
+        private System.Windows.Forms.ComboBox cmbNamaBarang;
+        private System.Windows.Forms.Button btnPindah;
+        private System.Windows.Forms.DateTimePicker dtpTanggal;
+        private System.Windows.Forms.Label lblSatuan;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txtIdB;
+        private System.Windows.Forms.TextBox txtNamaB;
+        private System.Windows.Forms.TextBox txtSatuanB;
     }
 }

@@ -1,20 +1,10 @@
-c:\users\furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\bin\Debug\Program.exe
-c:\users\furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\bin\Debug\Program.pdb
-c:\users\furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.Form_App.resources
-c:\users\furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.Properties.Resources.resources
-c:\users\furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.csproj.GenerateResource.Cache
-c:\users\furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.exe
-c:\users\furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.pdb
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.form_barang.resources
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.form_laporan.resources
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.form_login.resources
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.form_transaksi.resources
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.form_user.resources
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.form_utama.resources
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Furiez\documents\visual studio 2010\Projects\Inventarisasi Barang\Program\obj\x86\Debug\Program.csprojResolveAssemblyReference.cache
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csprojResolveAssemblyReference.cache
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data.mdf
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data_log.ldf
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\dB.sdf
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\server.dat
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.exe.config
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.exe
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.pdb
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_app.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_barang.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_laporan.resources
@@ -24,28 +14,5 @@ C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.fo
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_utama.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.Properties.Resources.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csproj.GenerateResource.Cache
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\server.dat
-<<<<<<< Updated upstream
-=======
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csprojAssemblyReference.cache
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_app.resources
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_barang.resources
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_laporan.resources
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_login.resources
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_transaksi.resources
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_user.resources
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_utama.resources
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.Properties.Resources.resources
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csproj.GenerateResource.cache
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csproj.CoreCompileInputs.cache
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.exe
-C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.pdb
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\SIPELATK-ALPHA.exe
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\SIPELATK-ALPHA.pdb
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\SIPELATK-ALPHA.exe
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\SIPELATK-ALPHA.pdb
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\dB.sdf
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\SIPELATK-ALPHA.exe.config
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data.mdf
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data_log.ldf
->>>>>>> Stashed changes
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.exe
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.pdb
