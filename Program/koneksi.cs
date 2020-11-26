@@ -12,23 +12,6 @@ namespace Program
     {
         public static SqlConnection conn = new SqlConnection(global.conn_string);
 
-        public static DataTable dtb_command(string command)
-        {
-            var dt = new DataTable();
-            var cmd = new SqlCommand(command, conn);
-            try
-            {
-                if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
-                var da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                conn.Close();
-            }
-            catch (SqlException ex)
-            { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
-            return dt;
-        }
-
         #region LOGIN
         public static string[] login(string ID)
         {
@@ -238,18 +221,123 @@ namespace Program
         }
         #endregion
 
-        #region BARANG
+        #region TRANSAKSI
+        public static bool query_transaksi(string cmmd, int id, string id_brg, string id_usr, DateTime tgl, int qty, string ket)
+        {
+            string command = string.Empty;
+            switch (cmmd)
+            {
+                case "INSERT":
+                    command = "INSERT INTO db_transaksi VALUES (@id, @id_brg, @id_usr, @tgl, @qty, @ket)";
+                    break;
+                case "UPDATE":
+                    command = "UPDATE db_transaksi SET id_barang=(@id_brg), id_user=(@id_usr), tgl=(@tgl), qty=(@qty), ket=(@ket) WHERE  id = (@id)";
+                    break;
+                case "DELETE":
+                    command = "DELETE FROM db_transaksi WHERE id = (@id)";
+                    break;
+            }
+            var cmd = new SqlCommand(command, conn);
+            if (cmmd == "HAPUS")
+            { cmd.Parameters.AddWithValue("@id", id); }
+            else
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id_brg", id_brg);
+                cmd.Parameters.AddWithValue("@id_usr", id_usr);
+                cmd.Parameters.AddWithValue("@tgl", tgl);
+                cmd.Parameters.AddWithValue("@qty", qty);
+                cmd.Parameters.AddWithValue("@ket", ket);
+            }
+            try
+            {
+                if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
+                cmd.ExecuteNonQuery();
+                if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
+                return true;
+            }
+            catch (SqlException ex)
+            { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
+            return false;
+        }
         #endregion
 
-        #region BARANG
-        #endregion
+        #region DATA TABLE
+        public static DataTable dtb_command(string command)
+        {
+            var dt = new DataTable();
+            var cmd = new SqlCommand(command, conn);
+            try
+            {
+                if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
+                var da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+            }
+            catch (SqlException ex)
+            { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
+            return dt;
+        }
 
-        #region BARANG
-        #endregion
+        public static DataTable dtb_command_id(string command, string id_user)
+        {
+            var dt = new DataTable();
+            var cmd = new SqlCommand(command, conn);
+            cmd.Parameters.AddWithValue("@id_user", id_user);
+            try
+            {
+                if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
+                var da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+            }
+            catch (SqlException ex)
+            { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
+            return dt;
+        }
 
-        #region BARANG
-        #endregion
+        public static DataTable dtb_command_time(string command, DateTime tgl_dari, DateTime tgl_sampai)
+        {
+            var dt = new DataTable();
+            var cmd = new SqlCommand(command, conn);
+            cmd.Parameters.AddWithValue("@tgl_d", tgl_dari);
+            cmd.Parameters.AddWithValue("@tgl_s", tgl_sampai);
+            try
+            {
+                if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
+                var da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+            }
+            catch (SqlException ex)
+            { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
+            return dt;
+        }
 
+        public static DataTable dtb_command_id_time(string command, string id_user, DateTime tgl_dari, DateTime tgl_sampai)
+        {
+            var dt = new DataTable();
+            var cmd = new SqlCommand(command, conn);
+            cmd.Parameters.AddWithValue("@id_user", id_user);
+            cmd.Parameters.AddWithValue("@tgl_d", tgl_dari);
+            cmd.Parameters.AddWithValue("@tgl_s", tgl_sampai);
+            try
+            {
+                if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
+                var da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                conn.Close();
+            }
+            catch (SqlException ex)
+            { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
+            return dt;
+        }
+        #endregion
 
         #region MY SQL DATA
         //private static MySqlConnection connt = new MySqlConnection(global.conn_string);

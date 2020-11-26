@@ -11,6 +11,8 @@ namespace Program
 {
     public partial class form_barang : UserControl
     {
+        enum StatusBarang { edit_barang, edit_detail_barang }
+
         private DataTable data_barang;
         private bool sts_brg;
         private bool sts_btn_simpan;
@@ -23,12 +25,13 @@ namespace Program
 
         protected override void OnVisibleChanged(EventArgs e)
         {
-            base.OnVisibleChanged(e);
             //var x = koneksi.dtb_command("SELECT MAX(id) FROM db_barang_dt").Rows[0][0];
             //MessageBox.Show(id_barang_dt.ToString());
             update_tabel();
             status_barang = true;
             status_button_simpan = true;
+
+            base.OnVisibleChanged(e);
         }
 
         #region METHOD 
@@ -38,7 +41,6 @@ namespace Program
             switch (status_barang)
             {
                 case true:
-                    var data_barang_dt = koneksi.dtb_command("SELECT d.id AS ID, b.nama AS Nama_Barang, d.tgl AS Tanggal, d.qty AS Jumlah, b.satuan AS Satuan, d.ket AS Keterangan FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id");
                     cmbNamaBarang.Items.Clear();
                     foreach (DataRow row in data_barang.Rows)
                     { cmbNamaBarang.Items.Add(row["nama"]); }
@@ -49,7 +51,11 @@ namespace Program
                     dtpTanggal.Value = DateTime.Today;
                     txtQty.Text = string.Empty;
                     txtKet.Text = string.Empty;
-                    dgvBarang.DataSource = data_barang_dt;
+
+                    if (global.id_type == global.id_type_admin)
+                    { dgvBarang.DataSource = koneksi.dtb_command("SELECT d.id AS ID, b.nama AS Nama_Barang, d.tgl AS Tanggal, d.qty AS Jumlah, b.satuan AS Satuan, d.ket AS Keterangan, u.nama AS Pengguna FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id LEFT JOIN db_user AS u ON d.id_user = u.id"); }
+                    else if (global.id_type == global.id_type_barang || global.id_type == global.id_type_inventaris)
+                    { dgvBarang.DataSource = koneksi.dtb_command_id("SELECT d.id AS ID, b.nama AS Nama_Barang, d.tgl AS Tanggal, d.qty AS Jumlah, b.satuan AS Satuan, d.ket AS Keterangan FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id WHERE d.id_user=(@id_user)", global.id); }
                     break;
                 case false:
                     dgvBarang.DataSource = koneksi.dtb_command("SELECT id AS ID_Barang, nama AS Nama_Barang, satuan AS Satuan FROM db_barang");

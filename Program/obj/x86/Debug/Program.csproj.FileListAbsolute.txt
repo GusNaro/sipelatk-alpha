@@ -16,3 +16,4 @@ C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.Pr
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csproj.GenerateResource.Cache
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.exe
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.pdb
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csprojResolveAssemblyReference.cache
