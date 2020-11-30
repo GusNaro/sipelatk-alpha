@@ -18,11 +18,12 @@ namespace Program
 
         protected override void OnVisibleChanged(EventArgs e)
         {
-            base.OnVisibleChanged(e);
-
             txtID.Text = null;
             txtPW.Text = null;
-            method.tampilkan_button();
+
+            txtID.Focus();
+
+            base.OnVisibleChanged(e);
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -30,15 +31,15 @@ namespace Program
             if (txtID.Text != "" || txtPW.Text != "")
             {
                 var data = koneksi.login(txtID.Text);
-                if (data[1] == txtPW.Text)
+                if (data[0] == txtID.Text && data[2] == txtPW.Text)
                 {
                     global.id = txtID.Text;
-                    global.id_nama = data[0];
-                    global.id_type = int.Parse(data[2]);
+                    global.id_nama = data[1];
+                    global.id_type = int.Parse(data[3]);
+                    method.tampilkan_button();
                     form_app.app.panel_button_top("BERANDA");
                     form_app.app.panel_utama.Controls["form_login"].Hide();
                     form_app.app.panel_utama.Controls["form_utama"].Show();
-                   
                 }
                 else
                 { MessageBox.Show("user dan password salah !!!!"); }

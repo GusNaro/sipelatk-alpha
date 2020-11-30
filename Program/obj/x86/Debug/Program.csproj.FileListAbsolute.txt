@@ -1,7 +1,5 @@
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data.mdf
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data_log.ldf
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\dB.sdf
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\server.dat
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.exe.config
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.exe
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.pdb

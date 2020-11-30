@@ -19,8 +19,14 @@ namespace Program
         protected override void OnVisibleChanged(EventArgs e)
         {
             base.OnVisibleChanged(e);
+        }
 
-            method.tampilkan_button();
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            var time = DateTime.Now;
+            lblDate.Text = time.ToLongDateString();
+            lblTime.Text = time.ToShortTimeString();
+            lblTimeSec.Text = time.Second.ToString();
         }
     }
 }

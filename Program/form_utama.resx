@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="pictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAMKGSURBVHhe7F0FeFRX074bggVCFEJCErwtUNpSqtQoLW2x
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAMKGSURBVHhe7F0FeFRX074bggVCFEJCErwtUNpSqtQoLW2x
         KoUCLRR36u1Xxd3d3YoWl+Lu7u7uTrK7//zznntvsnLWkk3I0h2e91mye++5ds57Z+bMmVH84hcbycXI
         x3iO8S6jGqMlowNjCONvxjLGNsYRxgXGTQa5wC0Gtj3G2M5YzpjKGMroyPiG8QXjPUYpRiwjhOEXv/jl
         Py55GC8wajD+YIxkrGDsY1xjmBgy0klP4ByuMw4wVjHGMFozvmS8xIhm+MUvfnmMJDPjScZHDAx2aEe7
@@ -954,4 +957,7 @@
         cAGsjjKwDauwCLwjygbNALC9wwMaDSLyBrOkz1Q0mmIwAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

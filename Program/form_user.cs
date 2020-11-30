@@ -79,6 +79,10 @@ namespace Program
             txtPass2.Text = "";
             cmbHak.SelectedIndex = 0;
             dgvUser.DataSource = koneksi.dtb_command("SELECT id AS ID_USER, nama AS NAMA, pass AS PASSOWRD, type AS TYPE_USER FROM db_user");
+            dgvUser.Columns[0].Width = dgvUser.Width * 22 / 100;
+            dgvUser.Columns[1].Width = dgvUser.Width * 35 / 100;
+            dgvUser.Columns[2].Width = dgvUser.Width * 22 / 100;
+            dgvUser.Columns[3].Width = dgvUser.Width * 16 / 100;
         }
 
         private bool notnull

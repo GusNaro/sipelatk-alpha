@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Program.Properties;
 
 namespace Program
 {
@@ -44,6 +45,7 @@ namespace Program
             button6.Visible = value[5];
             button6.Enabled = value[5];
             button6.Text = nama[5];
+            reset_button_image();
         }
 
         public Panel panel_utama
@@ -56,26 +58,25 @@ namespace Program
         {
             if (lokasi == "BERANDA")
             {
-                pnl_btn.Top = button1.Top;
+                reset_button_image();
+                button1.Image = button_image_click("BERANDA");
                 lbl_user.Text = global.id_nama;
             }
             else if (lokasi == "LOGIN")
             {
-                pnl_btn.Top = button2.Top;
+                reset_button_image();
+                button2.Image = button_image_click("LOGIN");
                 lbl_user.Text = "[ USER ]";
             }
         }
 
         #endregion
 
-        
         public form_app()
         {
             InitializeComponent();
             lbl_user.Text = "[ USER ]";
         }
-
-
 
         private void form_app_Load(object sender, EventArgs e)
         {
@@ -105,7 +106,8 @@ namespace Program
             flp.Dock = DockStyle.Fill;
             pnl_utama.Controls.Add(flp);
 
-            //pnl_utama.Controls["form_utama"].BringToFront();
+            method.tampilkan_button();
+            button1.Image = button_image_click("BERANDA");
 
             app.panel_utama.Controls["form_user"].Hide();
             app.panel_utama.Controls["form_barang"].Hide();
@@ -117,42 +119,49 @@ namespace Program
 
         private void button1_Click(object sender, EventArgs e)
         {
-            pnl_btn.Top = button1.Top;
             tampilkan(button1.Text);
+            reset_button_image();
+            button1.Image = button_image_click(button1.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pnl_btn.Top = button2.Top;
             tampilkan(button2.Text);
+            reset_button_image();
+            button2.Image = button_image_click(button2.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            pnl_btn.Top = button3.Top;
             tampilkan(button3.Text);
+            reset_button_image();
+            button3.Image = button_image_click(button3.Text);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            pnl_btn.Top = button4.Top;
             tampilkan(button4.Text);
+            reset_button_image();
+            button4.Image = button_image_click(button4.Text);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            pnl_btn.Top = button5.Top;
             tampilkan(button5.Text);
+            reset_button_image();
+            button5.Image = button_image_click(button5.Text);
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            panel_button_top("LOGIN");
             if (global.id == null) { this.Close(); }
-            else { tampilkan(button6.Text); }
+            else
+            {
+                tampilkan(button6.Text);
+                method.tampilkan_button();
+                panel_button_top("LOGIN");
+            }
         }
-
-
 
         private void tampilkan(string nama_form)
         {
@@ -226,6 +235,77 @@ namespace Program
                     app.panel_utama.Controls["form_utama"].Show();
                     break;
             }
+        }
+
+        private void reset_button_image()
+        {
+            button1.Image = button_image(button1.Text);
+            button2.Image = button_image(button2.Text);
+            button3.Image = button_image(button3.Text);
+            button4.Image = button_image(button4.Text);
+            button5.Image = button_image(button5.Text);
+            button6.Image = button_image(button6.Text);
+        }
+
+        private Image button_image(string nama_form)
+        {
+            object o = null;
+            switch (nama_form)
+            {
+                case "LOGIN":
+                    o = Resources.ResourceManager.GetObject("login_a");
+                    return (Image)o;
+                case "USER":
+                    o = Resources.ResourceManager.GetObject("user_a");
+                    return (Image)o;
+                case "BARANG":
+                    o = Resources.ResourceManager.GetObject("barang_a");
+                    return (Image)o;
+                case "INVENTARIS":
+                    o = Resources.ResourceManager.GetObject("inventaris_a");
+                    return (Image)o;
+                case "LAPORAN":
+                    o = Resources.ResourceManager.GetObject("laporan_a");
+                    return (Image)o;
+                case "BERANDA":
+                    o = Resources.ResourceManager.GetObject("beranda_a");
+                    return (Image)o;
+                case "KELUAR":
+                    if (global.id == null) { o = Resources.ResourceManager.GetObject("quit"); }
+                    else { o = Resources.ResourceManager.GetObject("keluar"); }
+                    return (Image)o;
+            }
+            return null;
+        }
+
+        private Image button_image_click(string nama_form)
+        {
+            object o = null;
+            switch (nama_form)
+            {
+                case "LOGIN":
+                    o = Resources.ResourceManager.GetObject("login_b");
+                    return (Image)o;
+                case "USER":
+                    o = Resources.ResourceManager.GetObject("user_b");
+                    return (Image)o;
+                case "BARANG":
+                    o = Resources.ResourceManager.GetObject("barang_b");
+                    return (Image)o;
+                case "INVENTARIS":
+                    o = Resources.ResourceManager.GetObject("inventaris_b");
+                    return (Image)o;
+                case "LAPORAN":
+                    o = Resources.ResourceManager.GetObject("laporan_b");
+                    return (Image)o;
+                case "BERANDA":
+                    o = Resources.ResourceManager.GetObject("beranda_b");
+                    return (Image)o;
+                case "KELUAR":
+                    o = Resources.ResourceManager.GetObject("quit");
+                    return (Image)o;
+            }
+            return null;
         }
     }
 }

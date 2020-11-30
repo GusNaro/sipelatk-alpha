@@ -15,8 +15,8 @@ namespace Program
         #region LOGIN
         public static string[] login(string ID)
         {
-            string[] data = new string[] { "", "", "" };
-            var cmd = new SqlCommand("SELECT nama, pass, type FROM db_user WHERE (id=@ID)", conn);
+            string[] data = new string[] { "", "", "", "" };
+            var cmd = new SqlCommand("SELECT * FROM db_user WHERE (id=@ID)", conn);
             cmd.Parameters.AddWithValue("@ID", ID);
             try
             {
@@ -26,7 +26,7 @@ namespace Program
                 da.Fill(dt);
                 conn.Close();
                 if (dt.Rows.Count > 0)
-                { data = new string[] { dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString() }; }
+                { data = new string[] { dt.Rows[0][0].ToString().Trim(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString() }; }
             }
             catch (SqlException ex)
             { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }

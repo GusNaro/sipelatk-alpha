@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtNRK = new System.Windows.Forms.TextBox();
             this.txtNama = new System.Windows.Forms.TextBox();
             this.txtPass1 = new System.Windows.Forms.TextBox();
@@ -95,18 +96,29 @@
             // btnSimpan
             // 
             this.btnSimpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSimpan.Location = new System.Drawing.Point(654, 228);
+            this.btnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSimpan.Image = global::Program.Properties.Resources.save;
+            this.btnSimpan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSimpan.Location = new System.Drawing.Point(654, 184);
             this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new System.Drawing.Size(130, 35);
+            this.btnSimpan.Size = new System.Drawing.Size(130, 85);
             this.btnSimpan.TabIndex = 2;
             this.btnSimpan.Text = "SIMPAN";
+            this.btnSimpan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSimpan.UseVisualStyleBackColor = true;
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // dgvUser
             // 
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUser.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUser.Location = new System.Drawing.Point(25, 287);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.ReadOnly = true;
@@ -116,72 +128,97 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(820, 228);
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Image = global::Program.Properties.Resources.update;
+            this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUpdate.Location = new System.Drawing.Point(820, 184);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(130, 35);
+            this.btnUpdate.Size = new System.Drawing.Size(130, 85);
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(984, 228);
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Image = global::Program.Properties.Resources.delete;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDelete.Location = new System.Drawing.Point(984, 184);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(130, 35);
+            this.btnDelete.Size = new System.Drawing.Size(130, 85);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "HAPUS";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 23);
-            this.label1.TabIndex = 5;
+            this.label1.Size = new System.Drawing.Size(42, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "NRK";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(50, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 23);
-            this.label2.TabIndex = 4;
+            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Nama";
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(0, 0);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(50, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
-            this.label3.TabIndex = 3;
+            this.label3.Size = new System.Drawing.Size(155, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Masukkan Password";
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(50, 193);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 2;
+            this.label4.Size = new System.Drawing.Size(189, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Masukkan Password Lagi";
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(50, 235);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 1;
+            this.label5.Size = new System.Drawing.Size(86, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Hak Akses";
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 23);
-            this.label6.TabIndex = 0;
+            this.label6.Size = new System.Drawing.Size(384, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Daftarkan diri anda disini (hanya administrator)";
             // 
             // form_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
