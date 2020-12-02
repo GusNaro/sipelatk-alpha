@@ -52,7 +52,7 @@
             this.txtNRK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNRK.Location = new System.Drawing.Point(262, 62);
             this.txtNRK.Name = "txtNRK";
-            this.txtNRK.Size = new System.Drawing.Size(313, 26);
+            this.txtNRK.Size = new System.Drawing.Size(154, 26);
             this.txtNRK.TabIndex = 0;
             // 
             // txtNama
@@ -68,6 +68,7 @@
             this.txtPass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass1.Location = new System.Drawing.Point(262, 150);
             this.txtPass1.Name = "txtPass1";
+            this.txtPass1.PasswordChar = '*';
             this.txtPass1.Size = new System.Drawing.Size(313, 26);
             this.txtPass1.TabIndex = 0;
             // 
@@ -76,6 +77,7 @@
             this.txtPass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass2.Location = new System.Drawing.Point(262, 190);
             this.txtPass2.Name = "txtPass2";
+            this.txtPass2.PasswordChar = '*';
             this.txtPass2.Size = new System.Drawing.Size(313, 26);
             this.txtPass2.TabIndex = 0;
             // 
@@ -110,6 +112,7 @@
             // 
             // dgvUser
             // 
+            this.dgvUser.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -218,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

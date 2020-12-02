@@ -122,6 +122,7 @@
             // 
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTransaksi.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTransaksi.Location = new System.Drawing.Point(24, 264);
             this.dgvTransaksi.Name = "dgvTransaksi";
@@ -151,7 +152,7 @@
             // 
             this.lblSatuan.AutoSize = true;
             this.lblSatuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblSatuan.Location = new System.Drawing.Point(380, 138);
+            this.lblSatuan.Location = new System.Drawing.Point(380, 125);
             this.lblSatuan.Name = "lblSatuan";
             this.lblSatuan.Size = new System.Drawing.Size(51, 20);
             this.lblSatuan.TabIndex = 9;
@@ -231,7 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);

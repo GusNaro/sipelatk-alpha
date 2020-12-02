@@ -45,9 +45,8 @@
             this.txtID.Location = new System.Drawing.Point(468, 293);
             this.txtID.MaxLength = 4;
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(175, 29);
+            this.txtID.Size = new System.Drawing.Size(147, 29);
             this.txtID.TabIndex = 0;
-            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPW
             // 
@@ -125,7 +124,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

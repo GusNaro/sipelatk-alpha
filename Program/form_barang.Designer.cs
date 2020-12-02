@@ -102,6 +102,7 @@
             // 
             // dgvBarang
             // 
+            this.dgvBarang.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -179,7 +180,7 @@
             this.dtpTanggal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dtpTanggal.Location = new System.Drawing.Point(165, 102);
             this.dtpTanggal.Name = "dtpTanggal";
-            this.dtpTanggal.Size = new System.Drawing.Size(200, 26);
+            this.dtpTanggal.Size = new System.Drawing.Size(280, 26);
             this.dtpTanggal.TabIndex = 13;
             // 
             // cmbNamaBarang
@@ -214,9 +215,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.Location = new System.Drawing.Point(17, 173);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 20);
+            this.label5.Size = new System.Drawing.Size(92, 20);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Satuan";
+            this.label5.Text = "Keterangan";
             // 
             // label4
             // 
@@ -332,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkGray;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.grbBarang);
             this.Controls.Add(this.grbDetail);
             this.Controls.Add(this.btnPindah);
