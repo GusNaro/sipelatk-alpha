@@ -136,7 +136,8 @@ namespace Program
                     if (notnull)
                     {
                         var _id_max = koneksi.dtb_command("SELECT MAX(id) FROM db_transaksi").Rows[0][0];
-                        var _id = int.Parse(_id_max.ToString()) + 1;
+                        var _id = 1;
+                        if (_id_max != "") { _id = int.Parse(_id_max.ToString()) + 1; }
                         var _id_brg = data_barang.Rows[cmbBarang.SelectedIndex]["id"].ToString();
                         var _id_usr = global.id;
                         var _tgl = dtpBarang.Value;
