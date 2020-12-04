@@ -44,6 +44,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.cmbCabang = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,9 +101,8 @@
             // 
             this.btnSimpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSimpan.Image = global::Program.Properties.Resources.save;
             this.btnSimpan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSimpan.Location = new System.Drawing.Point(654, 184);
+            this.btnSimpan.Location = new System.Drawing.Point(653, 212);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(130, 85);
             this.btnSimpan.TabIndex = 2;
@@ -122,10 +123,10 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvUser.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvUser.Location = new System.Drawing.Point(25, 287);
+            this.dgvUser.Location = new System.Drawing.Point(25, 320);
             this.dgvUser.Name = "dgvUser";
             this.dgvUser.ReadOnly = true;
-            this.dgvUser.Size = new System.Drawing.Size(1101, 410);
+            this.dgvUser.Size = new System.Drawing.Size(1101, 377);
             this.dgvUser.TabIndex = 3;
             this.dgvUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_Click);
             // 
@@ -134,7 +135,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::Program.Properties.Resources.update;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUpdate.Location = new System.Drawing.Point(820, 184);
+            this.btnUpdate.Location = new System.Drawing.Point(819, 212);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(130, 85);
             this.btnUpdate.TabIndex = 4;
@@ -148,7 +149,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = global::Program.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(984, 184);
+            this.btnDelete.Location = new System.Drawing.Point(983, 212);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(130, 85);
             this.btnDelete.TabIndex = 5;
@@ -217,11 +218,48 @@
             this.label6.TabIndex = 9;
             this.label6.Text = "Daftarkan diri anda disini (hanya administrator)";
             // 
+            // cmbCabang
+            // 
+            this.cmbCabang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCabang.FormattingEnabled = true;
+            this.cmbCabang.Items.AddRange(new object[] {
+            "Renon",
+            "Denpasar",
+            "Badung",
+            "Mangupura",
+            "Tabanan",
+            "Singaraja",
+            "Seririt",
+            "Negara",
+            "Gianyar",
+            "Ubud",
+            "Klungkung",
+            "Bangli",
+            "Karangasem",
+            "Mataram"});
+            this.cmbCabang.Location = new System.Drawing.Point(262, 274);
+            this.cmbCabang.Name = "cmbCabang";
+            this.cmbCabang.Size = new System.Drawing.Size(313, 28);
+            this.cmbCabang.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(50, 277);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(65, 20);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Cabang";
+            // 
             // form_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1134, 682);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cmbCabang);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -238,7 +276,7 @@
             this.Controls.Add(this.txtNama);
             this.Controls.Add(this.txtNRK);
             this.Name = "form_user";
-            this.Size = new System.Drawing.Size(1150, 720);
+            this.Load += new System.EventHandler(this.form_user_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -262,5 +300,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbCabang;
+        private System.Windows.Forms.Label label7;
     }
 }

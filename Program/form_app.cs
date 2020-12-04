@@ -54,23 +54,17 @@ namespace Program
             get { return pnl_utama; }
         }
 
-        public void panel_button_top(string lokasi)
+        public void buka_form_utama()
         {
-            if (lokasi == "BERANDA")
-            {
-                reset_button_image();
-                button1.Image = button_image_click("BERANDA");
-                lbl_user.Text = global.id_nama;
-            }
-            else if (lokasi == "LOGIN")
-            {
-                reset_button_image();
-                button2.Image = button_image_click("LOGIN");
-                lbl_user.Text = "[ USER ]";
-            }
+            buka_form(new form_utama());
+            reset_button_image();
+            button1.Image = button_image_click("BERANDA");
+            lbl_user.Text = global.id_nama;
         }
 
         #endregion
+
+        private Form form_aktif = null;
 
         public form_app()
         {
@@ -81,40 +75,11 @@ namespace Program
         private void form_app_Load(object sender, EventArgs e)
         {
             aplikasi = this;
-
-            form_utama fh = new form_utama();
-            fh.Dock = DockStyle.Fill;
-            pnl_utama.Controls.Add(fh);
-
-            form_login fl = new form_login();
-            fl.Dock = DockStyle.Fill;
-            pnl_utama.Controls.Add(fl);
-
-            form_user fu = new form_user();
-            fu.Dock = DockStyle.Fill;
-            pnl_utama.Controls.Add(fu);
-
-            form_barang fb = new form_barang();
-            fb.Dock = DockStyle.Fill;
-            pnl_utama.Controls.Add(fb);
-
-            form_transaksi ft = new form_transaksi();
-            ft.Dock = DockStyle.Fill;
-            pnl_utama.Controls.Add(ft);
-
-            form_laporan flp = new form_laporan();
-            flp.Dock = DockStyle.Fill;
-            pnl_utama.Controls.Add(flp);
-
+            
             method.tampilkan_button();
             button1.Image = button_image_click("BERANDA");
 
-            app.panel_utama.Controls["form_user"].Hide();
-            app.panel_utama.Controls["form_barang"].Hide();
-            app.panel_utama.Controls["form_transaksi"].Hide();
-            app.panel_utama.Controls["form_laporan"].Hide();
-            app.panel_utama.Controls["form_login"].Hide();
-            app.panel_utama.Controls["form_utama"].Show();
+            buka_form(new form_utama());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -154,12 +119,12 @@ namespace Program
 
         private void button6_Click(object sender, EventArgs e)
         {
-            if (global.id == null) { this.Close(); }
+            if (global.id == string.Empty) { this.Close(); }
             else
             {
                 tampilkan(button6.Text);
                 method.tampilkan_button();
-                panel_button_top("LOGIN");
+                reset_button_image();
             }
         }
 
@@ -168,71 +133,29 @@ namespace Program
             switch (nama_form)
             {
                 case "LOGIN":
-                    app.panel_utama.Controls["form_user"].Hide();
-                    app.panel_utama.Controls["form_barang"].Hide();
-                    app.panel_utama.Controls["form_transaksi"].Hide();
-                    app.panel_utama.Controls["form_laporan"].Hide();
-                    app.panel_utama.Controls["form_utama"].Hide();
-                    app.panel_utama.Controls["form_login"].Show();
+                    buka_form(new form_login());
                     break;
                 case "USER":
-                    app.panel_utama.Controls["form_barang"].Hide();
-                    app.panel_utama.Controls["form_transaksi"].Hide();
-                    app.panel_utama.Controls["form_laporan"].Hide();
-                    app.panel_utama.Controls["form_login"].Hide();
-                    app.panel_utama.Controls["form_utama"].Hide();
-                    app.panel_utama.Controls["form_user"].Show();
+                    buka_form(new form_user());
                     break;
                 case "BARANG":
-                    app.panel_utama.Controls["form_user"].Hide();
-                    app.panel_utama.Controls["form_transaksi"].Hide();
-                    app.panel_utama.Controls["form_laporan"].Hide();
-                    app.panel_utama.Controls["form_login"].Hide();
-                    app.panel_utama.Controls["form_utama"].Hide();
-                    app.panel_utama.Controls["form_barang"].Show();
+                    buka_form(new form_barang());
                     break;
                 case "INVENTARIS":
-                    app.panel_utama.Controls["form_user"].Hide();
-                    app.panel_utama.Controls["form_barang"].Hide();
-                    app.panel_utama.Controls["form_laporan"].Hide();
-                    app.panel_utama.Controls["form_login"].Hide();
-                    app.panel_utama.Controls["form_utama"].Hide();
-                    app.panel_utama.Controls["form_transaksi"].Show();
+                    buka_form(new form_transaksi());
                     break;
                 case "LAPORAN":
-                    app.panel_utama.Controls["form_user"].Hide();
-                    app.panel_utama.Controls["form_barang"].Hide();
-                    app.panel_utama.Controls["form_transaksi"].Hide();
-                    app.panel_utama.Controls["form_login"].Hide();
-                    app.panel_utama.Controls["form_utama"].Hide();
-                    app.panel_utama.Controls["form_laporan"].Show();
+                    buka_form(new form_laporan());
                     break;
                 case "BERANDA":
-                    app.panel_utama.Controls["form_user"].Hide();
-                    app.panel_utama.Controls["form_barang"].Hide();
-                    app.panel_utama.Controls["form_transaksi"].Hide();
-                    app.panel_utama.Controls["form_laporan"].Hide();
-                    app.panel_utama.Controls["form_login"].Hide();
-                    app.panel_utama.Controls["form_utama"].Show();
+                    buka_form(new form_utama());
                     break;
                 case "KELUAR":
-                    global.id = null;
-                    global.id_nama = null;
+                    global.id = string.Empty;
+                    global.id_nama = string.Empty;
                     global.id_type = 0;
-                    app.panel_utama.Controls["form_user"].Hide();
-                    app.panel_utama.Controls["form_barang"].Hide();
-                    app.panel_utama.Controls["form_transaksi"].Hide();
-                    app.panel_utama.Controls["form_laporan"].Hide();
-                    app.panel_utama.Controls["form_utama"].Hide();
-                    app.panel_utama.Controls["form_login"].Show();
-                    break;
-                default:
-                    app.panel_utama.Controls["form_user"].Hide();
-                    app.panel_utama.Controls["form_barang"].Hide();
-                    app.panel_utama.Controls["form_transaksi"].Hide();
-                    app.panel_utama.Controls["form_laporan"].Hide();
-                    app.panel_utama.Controls["form_login"].Hide();
-                    app.panel_utama.Controls["form_utama"].Show();
+                    lbl_user.Text = "[ USER ]";
+                    buka_form(new form_utama());
                     break;
             }
         }
@@ -271,7 +194,7 @@ namespace Program
                     o = Resources.ResourceManager.GetObject("beranda_a");
                     return (Image)o;
                 case "KELUAR":
-                    if (global.id == null) { o = Resources.ResourceManager.GetObject("quit"); }
+                    if (global.id == string.Empty) { o = Resources.ResourceManager.GetObject("quit"); }
                     else { o = Resources.ResourceManager.GetObject("keluar"); }
                     return (Image)o;
             }
@@ -301,11 +224,21 @@ namespace Program
                 case "BERANDA":
                     o = Resources.ResourceManager.GetObject("beranda_b");
                     return (Image)o;
-                case "KELUAR":
-                    o = Resources.ResourceManager.GetObject("quit");
-                    return (Image)o;
             }
             return null;
+        }
+
+        private void buka_form(Form anak_form)
+        {
+            if (form_aktif != null) { form_aktif.Close(); }
+            form_aktif = anak_form;
+            anak_form.TopLevel = false;
+            anak_form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            anak_form.Dock = DockStyle.Fill;
+            pnl_utama.Controls.Add(anak_form);
+            pnl_utama.Tag = anak_form;
+            anak_form.BringToFront();
+            anak_form.Show();
         }
     }
 }

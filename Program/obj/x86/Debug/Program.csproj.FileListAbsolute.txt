@@ -1,8 +1,5 @@
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data.mdf
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data_log.ldf
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.exe.config
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.exe
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\Program.pdb
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_app.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_barang.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_laporan.resources
@@ -12,8 +9,6 @@ C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.fo
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.form_utama.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.Properties.Resources.resources
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csproj.GenerateResource.Cache
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.exe
-C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.pdb
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csprojResolveAssemblyReference.cache
 C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data.mdf
 C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\data_log.ldf
@@ -33,3 +28,8 @@ C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\SIPEL 
 C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\SIPEL - ATK BPD Bali.pdb
 C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\SIPEL - ATK BPD Bali.exe
 C:\Users\igbna\OneDrive\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\SIPEL - ATK BPD Bali.pdb
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\SIPEL - ATK BPD Bali.exe.config
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\SIPEL - ATK BPD Bali.exe
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\SIPEL - ATK BPD Bali.pdb
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\SIPEL - ATK BPD Bali.exe
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\bin\Debug\SIPEL - ATK BPD Bali.pdb

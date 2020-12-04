@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Program
 {
-    public partial class form_laporan : UserControl
+    public partial class form_laporan : Form
     {
         public form_laporan()
         {

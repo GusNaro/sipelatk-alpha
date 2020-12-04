@@ -36,18 +36,33 @@ namespace Program
         #endregion
 
         #region USER
-        public static bool user_ins_upd(string cmmd, string id, string nama, string pass, int type)
+        public static bool user_ins_upd(string cmmd, string id, string nama, string pass, int type, string cabang)
         {
             string command = "";
-            if (cmmd == "INSERT")
-            { command = "INSERT INTO db_user VALUES (@id, @nama, @pass, @type)"; }
-            else if (cmmd == "UPDATE")
-            { command = "UPDATE db_user SET nama=(@nama), pass=(@pass), type=(@type) WHERE  ID = (@id)"; }
+            switch (cmmd)
+            {
+                case "INSERT":
+                    command = "INSERT INTO db_user VALUES (@id, @nama, @pass, @type, @cabang)";
+                    break;
+                case "UPDATE":
+                    command = "UPDATE db_user SET nama=(@nama), pass=(@pass), type=(@type), cabang=(@cabang) WHERE  ID = (@id)";
+                    break;
+                case "DELETE":
+                    command = "DELETE FROM db_user WHERE ID = (@id)";
+                    break;
+            }
             var cmd = new SqlCommand(command, conn);
-            cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@nama", nama);
-            cmd.Parameters.AddWithValue("@pass", pass);
-            cmd.Parameters.AddWithValue("@type", type);
+            if (cmmd == "INSERT" || cmmd == "UPDATE")
+            {
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@nama", nama);
+                cmd.Parameters.AddWithValue("@pass", pass);
+                cmd.Parameters.AddWithValue("@type", type);
+                cmd.Parameters.AddWithValue("@cabang", cabang);
+            }
+            else if (cmmd == "DELETE")
+            { cmd.Parameters.AddWithValue("@id", id); }
+
             try
             {
                 if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
@@ -60,25 +75,6 @@ namespace Program
             if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
             return false;
         }
-
-        public static bool user_delete(string id)
-        {
-            var command = "DELETE FROM db_user WHERE ID = (@id)";
-            var cmd = new SqlCommand(command, conn);
-            cmd.Parameters.AddWithValue("@id", id);
-            try
-            {
-                if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                return true;
-            }
-            catch (SqlException ex)
-            { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
-            return false;
-        }
-
         #endregion
 
         #region BARANG
@@ -280,7 +276,7 @@ namespace Program
             if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
             return dt;
         }
-
+        
         public static DataTable dtb_command_id(string command, string id_user)
         {
             var dt = new DataTable();

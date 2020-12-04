@@ -9,10 +9,8 @@ using System.Windows.Forms;
 
 namespace Program
 {
-    public partial class form_barang : UserControl
+    public partial class form_barang : Form
     {
-        enum StatusBarang { edit_barang, edit_detail_barang }
-
         private DataTable data_barang;
         private bool sts_brg;
         private bool sts_btn_simpan;

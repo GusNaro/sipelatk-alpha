@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Program
 {
-    public partial class form_transaksi : UserControl
+    public partial class form_transaksi : Form
     {
         private DataTable data_barang, data_transaksi;
         private bool sts_btn_simpan;
@@ -20,14 +20,6 @@ namespace Program
 
             data_barang = new DataTable();
             data_transaksi = new DataTable();
-        }
-
-        protected override void OnVisibleChanged(EventArgs e)
-        {
-            update_tabel();
-            status_button_simpan = true;
-
-            base.OnVisibleChanged(e);
         }
 
         #region METHOD
@@ -135,9 +127,9 @@ namespace Program
                 case true:
                     if (notnull)
                     {
-                        var _id_max = koneksi.dtb_command("SELECT MAX(id) FROM db_transaksi").Rows[0][0];
-                        var _id = 1;
-                        if (_id_max != "") { _id = int.Parse(_id_max.ToString()) + 1; }
+                        int _id = 1;
+                        var _id_max = koneksi.dtb_command("SELECT MAX(id) FROM db_transaksi").Rows;
+                        if (_id_max.Count > 1) { _id = int.Parse(_id_max[0][0].ToString()) + 1; }
                         var _id_brg = data_barang.Rows[cmbBarang.SelectedIndex]["id"].ToString();
                         var _id_usr = global.id;
                         var _tgl = dtpBarang.Value;
@@ -193,5 +185,11 @@ namespace Program
             }
         }
         #endregion
+
+        private void form_transaksi_Load(object sender, EventArgs e)
+        {
+            update_tabel();
+            status_button_simpan = true;
+        }
     }
 }

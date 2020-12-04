@@ -123,6 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1134, 682);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -131,7 +132,7 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.pictureBox1);
             this.Name = "form_utama";
-            this.Size = new System.Drawing.Size(1150, 720);
+            this.Load += new System.EventHandler(this.form_utama_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

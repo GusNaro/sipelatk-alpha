@@ -9,16 +9,11 @@ using System.Windows.Forms;
 
 namespace Program
 {
-    public partial class form_utama : UserControl
+    public partial class form_utama : Form
     {
         public form_utama()
         {
             InitializeComponent();
-        }
-
-        protected override void OnVisibleChanged(EventArgs e)
-        {
-            base.OnVisibleChanged(e);
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -27,6 +22,11 @@ namespace Program
             lblDate.Text = time.ToLongDateString();
             lblTime.Text = time.ToShortTimeString();
             lblTimeSec.Text = time.Second.ToString();
+        }
+
+        private void form_utama_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

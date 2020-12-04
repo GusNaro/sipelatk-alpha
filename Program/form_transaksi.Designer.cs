@@ -233,6 +233,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1134, 682);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -251,7 +252,7 @@
             this.Controls.Add(this.cmbBarang);
             this.Controls.Add(this.txtQty);
             this.Name = "form_transaksi";
-            this.Size = new System.Drawing.Size(1150, 720);
+            this.Load += new System.EventHandler(this.form_transaksi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

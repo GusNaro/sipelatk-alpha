@@ -8,6 +8,9 @@ namespace Program
 {
     class global
     {
+        public enum StatusBarang { edit_barang, edit_detail_barang }
+        public enum StatusButtonSimpan { simpan, tambah }
+
         public const int id_type_admin = 1;
         public const int id_type_barang = 2;
         public const int id_type_inventaris = 3;

@@ -82,37 +82,37 @@
       <DependentUpon>form_app.cs</DependentUpon>
     </Compile>
     <Compile Include="form_barang.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_barang.Designer.cs">
       <DependentUpon>form_barang.cs</DependentUpon>
     </Compile>
     <Compile Include="form_laporan.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_laporan.Designer.cs">
       <DependentUpon>form_laporan.cs</DependentUpon>
     </Compile>
     <Compile Include="form_login.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_login.Designer.cs">
       <DependentUpon>form_login.cs</DependentUpon>
     </Compile>
     <Compile Include="form_transaksi.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_transaksi.Designer.cs">
       <DependentUpon>form_transaksi.cs</DependentUpon>
     </Compile>
     <Compile Include="form_user.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_user.Designer.cs">
       <DependentUpon>form_user.cs</DependentUpon>
     </Compile>
     <Compile Include="form_utama.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="form_utama.Designer.cs">
       <DependentUpon>form_utama.cs</DependentUpon>
@@ -190,6 +190,7 @@
       <DependentUpon>data.mdf</DependentUpon>
     </Content>
     <Content Include="icon-bpd.ico" />
+    <None Include="Resources\tambah.png" />
     <None Include="Resources\bpd_logo_hires.png" />
     <None Include="Resources\update.png" />
     <None Include="Resources\save.png" />
