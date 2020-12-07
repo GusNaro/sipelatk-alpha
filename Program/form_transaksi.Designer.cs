@@ -120,10 +120,16 @@
             // 
             // dgvTransaksi
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvTransaksi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTransaksi.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTransaksi.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTransaksi.Location = new System.Drawing.Point(24, 264);
             this.dgvTransaksi.Name = "dgvTransaksi";
             this.dgvTransaksi.Size = new System.Drawing.Size(1104, 435);

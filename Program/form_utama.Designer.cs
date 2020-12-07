@@ -54,7 +54,6 @@
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(464, 46);
             this.lblTime.TabIndex = 1;
-            this.lblTime.Text = "60:60";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblDate
@@ -64,7 +63,6 @@
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(1144, 63);
             this.lblDate.TabIndex = 2;
-            this.lblDate.Text = "DATE";
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTimeSec
@@ -74,7 +72,6 @@
             this.lblTimeSec.Name = "lblTimeSec";
             this.lblTimeSec.Size = new System.Drawing.Size(42, 55);
             this.lblTimeSec.TabIndex = 3;
-            this.lblTimeSec.Text = "60";
             this.lblTimeSec.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1

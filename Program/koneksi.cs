@@ -36,7 +36,7 @@ namespace Program
         #endregion
 
         #region USER
-        public static bool user_ins_upd(string cmmd, string id, string nama, string pass, int type, string cabang)
+        public static bool user_query(string cmmd, string id, string nama, string pass, int type, string cabang)
         {
             string command = "";
             switch (cmmd)
@@ -79,27 +79,7 @@ namespace Program
 
         #region BARANG
 
-        public static bool status_id_barang_dt(int id)
-        {
-            var cmd = new SqlCommand("SELECT id FROM db_barang_dt WHERE (id=@ID)", conn);
-            cmd.Parameters.AddWithValue("@ID", id);
-            try
-            {
-                if (conn.State == System.Data.ConnectionState.Closed) { conn.Open(); }
-                var da = new SqlDataAdapter(cmd);
-                var dt = new DataTable();
-                da.Fill(dt);
-                conn.Close();
-                if (dt.Rows.Count > 0)
-                { return true; }
-            }
-            catch (SqlException ex)
-            { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            if (conn.State == System.Data.ConnectionState.Open) { conn.Close(); }
-            return false;
-        }
-
-        public static bool status_id_barang(string id)
+        public static bool status_id_barang_dt(string id)
         {
             var cmd = new SqlCommand("SELECT id FROM db_barang_dt WHERE (id_barang=@ID)", conn);
             cmd.Parameters.AddWithValue("@ID", id);
@@ -110,8 +90,7 @@ namespace Program
                 var dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
-                if (dt.Rows.Count > 0)
-                { return true; }
+                if (dt.Rows.Count > 0) { return true; }
             }
             catch (SqlException ex)
             { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -130,8 +109,7 @@ namespace Program
                 var dt = new DataTable();
                 da.Fill(dt);
                 conn.Close();
-                if (dt.Rows.Count > 0)
-                { return true; }
+                if (dt.Rows.Count > 0) { return true; }
             }
             catch (SqlException ex)
             { MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -179,16 +157,16 @@ namespace Program
             return false;
         }
 
-        public static bool query_barang(string cmmd, string id, string nama, string satuan)
+        public static bool query_barang(string cmmd, string id, string nama, string satuan, int harga)
         {
             string command = "";
             switch (cmmd)
             {
                 case "INSERT":
-                    command = "INSERT INTO db_barang VALUES (@id, @nama, @satuan)";
+                    command = "INSERT INTO db_barang VALUES (@id, @nama, @satuan, @harga)";
                     break;
                 case "UPDATE":
-                    command = "UPDATE db_barang SET nama=(@nama), satuan=(@satuan) WHERE  id = (@id)";
+                    command = "UPDATE db_barang SET nama=(@nama), satuan=(@satuan), harga=(@harga) WHERE id = (@id)";
                     break;
                 case "DELETE":
                     command = "DELETE FROM db_barang WHERE id = (@id)";
@@ -202,6 +180,7 @@ namespace Program
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@nama", nama);
                 cmd.Parameters.AddWithValue("@satuan", satuan);
+                cmd.Parameters.AddWithValue("@harga", harga);
             }
             try
             {

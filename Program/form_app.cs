@@ -75,6 +75,7 @@ namespace Program
         private void form_app_Load(object sender, EventArgs e)
         {
             aplikasi = this;
+            global.id = string.Empty;
             
             method.tampilkan_button();
             button1.Image = button_image_click("BERANDA");
@@ -124,7 +125,7 @@ namespace Program
             {
                 tampilkan(button6.Text);
                 method.tampilkan_button();
-                reset_button_image();
+                button1.Image = button_image_click("BERANDA");
             }
         }
 

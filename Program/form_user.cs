@@ -32,7 +32,7 @@ namespace Program
                     {
                         if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            var berhasil = koneksi.user_ins_upd("INSERT", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
+                            var berhasil = koneksi.user_query("INSERT", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
                             if (berhasil)
                             {
                                 MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -54,7 +54,7 @@ namespace Program
             {
                 if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UBAH DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var berhasil = koneksi.user_ins_upd("UPDATE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
+                    var berhasil = koneksi.user_query("UPDATE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
                     if (berhasil)
                     {
                         MessageBox.Show("DATA BERHASIL DIUPDATE !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -70,7 +70,7 @@ namespace Program
             {
                 if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UBAH DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var berhasil = koneksi.user_ins_upd("DELETE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
+                    var berhasil = koneksi.user_query("DELETE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
                     if (berhasil)
                     {
                         MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -78,6 +78,8 @@ namespace Program
                     }
                 }
             }
+            else
+            { MessageBox.Show("PILIH DATA YANG INGIN DIHAPUS !!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void dgvUser_Click(object sender, DataGridViewCellEventArgs e)

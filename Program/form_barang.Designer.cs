@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSimpan = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
@@ -53,6 +53,9 @@
             this.txtSatuanB = new System.Windows.Forms.TextBox();
             this.txtNamaB = new System.Windows.Forms.TextBox();
             this.txtIdB = new System.Windows.Forms.TextBox();
+            this.txtHargaB = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             this.grbDetail.SuspendLayout();
             this.grbBarang.SuspendLayout();
@@ -63,7 +66,7 @@
             this.btnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSimpan.Image = global::Program.Properties.Resources.save;
             this.btnSimpan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSimpan.Location = new System.Drawing.Point(656, 171);
+            this.btnSimpan.Location = new System.Drawing.Point(646, 186);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(150, 85);
             this.btnSimpan.TabIndex = 1;
@@ -77,7 +80,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::Program.Properties.Resources.update;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUpdate.Location = new System.Drawing.Point(825, 171);
+            this.btnUpdate.Location = new System.Drawing.Point(810, 186);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(150, 85);
             this.btnUpdate.TabIndex = 2;
@@ -91,7 +94,7 @@
             this.btnHapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHapus.Image = global::Program.Properties.Resources.delete;
             this.btnHapus.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHapus.Location = new System.Drawing.Point(992, 171);
+            this.btnHapus.Location = new System.Drawing.Point(971, 186);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(150, 85);
             this.btnHapus.TabIndex = 3;
@@ -104,18 +107,18 @@
             // 
             this.dgvBarang.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBarang.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvBarang.Location = new System.Drawing.Point(23, 274);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBarang.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvBarang.Location = new System.Drawing.Point(11, 282);
             this.dgvBarang.Name = "dgvBarang";
             this.dgvBarang.ReadOnly = true;
-            this.dgvBarang.Size = new System.Drawing.Size(1108, 424);
+            this.dgvBarang.Size = new System.Drawing.Size(1114, 390);
             this.dgvBarang.TabIndex = 4;
             this.dgvBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_Click);
             // 
@@ -125,7 +128,7 @@
             this.btnPindah.ForeColor = System.Drawing.Color.Red;
             this.btnPindah.Image = global::Program.Properties.Resources.change;
             this.btnPindah.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPindah.Location = new System.Drawing.Point(656, 36);
+            this.btnPindah.Location = new System.Drawing.Point(647, 36);
             this.btnPindah.Name = "btnPindah";
             this.btnPindah.Size = new System.Drawing.Size(109, 77);
             this.btnPindah.TabIndex = 6;
@@ -150,7 +153,7 @@
             this.grbDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbDetail.Location = new System.Drawing.Point(9, 3);
             this.grbDetail.Name = "grbDetail";
-            this.grbDetail.Size = new System.Drawing.Size(624, 253);
+            this.grbDetail.Size = new System.Drawing.Size(624, 268);
             this.grbDetail.TabIndex = 13;
             this.grbDetail.TabStop = false;
             this.grbDetail.Text = "Input Barang";
@@ -261,6 +264,8 @@
             // 
             // grbBarang
             // 
+            this.grbBarang.Controls.Add(this.label9);
+            this.grbBarang.Controls.Add(this.txtHargaB);
             this.grbBarang.Controls.Add(this.label8);
             this.grbBarang.Controls.Add(this.label7);
             this.grbBarang.Controls.Add(this.label6);
@@ -268,9 +273,9 @@
             this.grbBarang.Controls.Add(this.txtNamaB);
             this.grbBarang.Controls.Add(this.txtIdB);
             this.grbBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbBarang.Location = new System.Drawing.Point(786, 3);
+            this.grbBarang.Location = new System.Drawing.Point(769, 3);
             this.grbBarang.Name = "grbBarang";
-            this.grbBarang.Size = new System.Drawing.Size(356, 145);
+            this.grbBarang.Size = new System.Drawing.Size(356, 174);
             this.grbBarang.TabIndex = 14;
             this.grbBarang.TabStop = false;
             this.grbBarang.Text = "Jenis Barang";
@@ -329,11 +334,41 @@
             this.txtIdB.Size = new System.Drawing.Size(199, 26);
             this.txtIdB.TabIndex = 13;
             // 
+            // txtHargaB
+            // 
+            this.txtHargaB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtHargaB.Location = new System.Drawing.Point(146, 138);
+            this.txtHargaB.Name = "txtHargaB";
+            this.txtHargaB.Size = new System.Drawing.Size(199, 26);
+            this.txtHargaB.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.Location = new System.Drawing.Point(18, 141);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 20);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Harga";
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(647, 14);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(109, 18);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "PINDAH";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // form_barang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1134, 682);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.grbBarang);
             this.Controls.Add(this.grbDetail);
             this.Controls.Add(this.btnPindah);
@@ -341,8 +376,9 @@
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSimpan);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "form_barang";
-            this.Size = new System.Drawing.Size(1150, 720);
+            this.Load += new System.EventHandler(this.form_barang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).EndInit();
             this.grbDetail.ResumeLayout(false);
             this.grbDetail.PerformLayout();
@@ -378,5 +414,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtHargaB;
+        private System.Windows.Forms.Label label10;
     }
 }

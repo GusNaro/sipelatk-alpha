@@ -16,9 +16,17 @@ namespace Program
             InitializeComponent();
         }
 
+        private void form_login_Load(object sender, EventArgs e)
+        {
+            txtID.Text = string.Empty;
+            txtPW.Text = string.Empty;
+
+            txtID.Focus();
+        }
+
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (txtID.Text != "" || txtPW.Text != "")
+            if (txtID.Text != string.Empty || txtPW.Text != string.Empty)
             {
                 var data = koneksi.login(txtID.Text);
                 if (data[0] == txtID.Text && data[2] == txtPW.Text)
@@ -36,12 +44,14 @@ namespace Program
             }
         }
 
-        private void form_login_Load(object sender, EventArgs e)
+        private void txt_KeyDown(object sender, KeyEventArgs e)
         {
-            txtID.Text = string.Empty;
-            txtPW.Text = string.Empty;
-
-            txtID.Focus();
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtID.Text == string.Empty) { txtID.Focus(); }
+                else if (txtPW.Text == string.Empty) { txtPW.Focus(); }
+                else { btn_login_Click(this, new EventArgs()); }
+            }
         }
 
     }

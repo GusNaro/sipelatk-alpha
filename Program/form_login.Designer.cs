@@ -47,6 +47,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(147, 29);
             this.txtID.TabIndex = 0;
+            this.txtID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             // 
             // txtPW
             // 
@@ -56,6 +57,7 @@
             this.txtPW.PasswordChar = '*';
             this.txtPW.Size = new System.Drawing.Size(246, 29);
             this.txtPW.TabIndex = 1;
+            this.txtPW.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_KeyDown);
             // 
             // btn_login
             // 
@@ -104,11 +106,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(229, 202);
+            this.label4.Location = new System.Drawing.Point(178, 202);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(306, 55);
+            this.label4.Size = new System.Drawing.Size(712, 55);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Siapa anda?";
+            this.label4.Text = "LOGIN SIPEL - ATK BPD BALI";
             // 
             // pictureBox1
             // 
