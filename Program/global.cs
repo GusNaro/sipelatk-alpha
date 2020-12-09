@@ -10,6 +10,7 @@ namespace Program
     {
         public enum StatusBarang { edit_barang, edit_detail_barang }
         public enum StatusButtonSimpan { simpan, tambah }
+        public enum JenisLaporan { stok, pengadaan, pengadaan_id, pengeluaran, pengeluaran_id, renon, denpasar, badung, mangupura, tabanan, singaraja, seririt, negara, gianyar, ubud, klungkung, bangli, karangasem, mataram }
 
         public const int id_type_admin = 1;
         public const int id_type_barang = 2;

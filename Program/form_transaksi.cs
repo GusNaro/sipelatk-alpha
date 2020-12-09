@@ -36,13 +36,51 @@ namespace Program
             if (global.id_type == global.id_type_admin)
             {
                 data_transaksi = koneksi.dtb_command("SELECT * FROM db_transaksi");
-                dgvTransaksi.DataSource = koneksi.dtb_command("SELECT t.id AS ID, b.nama AS Nama_Barang, t.tgl AS Tanggal, t.qty AS Jumlah, b.satuan AS Satuan, t.ket AS Keterangan, u.nama AS Pengguna FROM db_transaksi AS t LEFT OUTER JOIN db_barang AS b ON t.id_barang = b.id LEFT OUTER JOIN db_user AS u ON t.id_user = u.id");
+                dgvTransaksi.DataSource = koneksi.dtb_command("SELECT t.id AS ID, u.nama AS Pengguna, b.nama AS Nama_Barang, t.tgl AS Tanggal, t.qty AS Jumlah, b.satuan AS Satuan, t.ket AS Keterangan FROM db_transaksi AS t LEFT OUTER JOIN db_barang AS b ON t.id_barang = b.id LEFT OUTER JOIN db_user AS u ON t.id_user = u.id");
             }
             else if (global.id_type == global.id_type_barang || global.id_type == global.id_type_inventaris)
             {
                 data_transaksi = koneksi.dtb_command_id("SELECT * FROM db_transaksi WHERE id_user=(@id_user)", global.id);
                 dgvTransaksi.DataSource = koneksi.dtb_command_id("SELECT t.id AS ID, b.nama AS Nama_Barang, t.tgl AS Tanggal, t.qty AS Jumlah, b.satuan AS Satuan, t.ket AS Keterangan FROM db_transaksi AS t LEFT OUTER JOIN db_barang AS b ON t.id_barang = b.id WHERE t.id_user=(@id_user)", global.id);
             }
+
+            #region DATA GRID VIEW WIDTH
+            dgvTransaksi.Columns["ID"].Width = dgvTransaksi.Width * 10 / 100;
+            dgvTransaksi.Columns["Nama_Barang"].Width = dgvTransaksi.Width * 25 / 100;
+            dgvTransaksi.Columns["Tanggal"].Width = dgvTransaksi.Width * 11 / 100;
+            dgvTransaksi.Columns["Jumlah"].Width = dgvTransaksi.Width * 7 / 100;
+            dgvTransaksi.Columns["Satuan"].Width = dgvTransaksi.Width * 12 / 100;
+            if (global.id_type == global.id_type_admin || global.id_type == global.id_type_laporan)
+            {
+                dgvTransaksi.Columns["Pengguna"].Width = dgvTransaksi.Width * 15 / 100;
+                dgvTransaksi.Columns["Keterangan"].Width = dgvTransaksi.Width * 15 / 100;
+            }
+            else
+            { dgvTransaksi.Columns["Keterangan"].Width = dgvTransaksi.Width * 30 / 100; }
+            #endregion
+
+            #region DATA GRID VIEW ORDER
+            dgvTransaksi.Columns["ID"].DisplayIndex = 0;
+            if (global.id_type == global.id_type_admin || global.id_type == global.id_type_laporan)
+            {
+                dgvTransaksi.Columns["Pengguna"].DisplayIndex = 1;
+                dgvTransaksi.Columns["Nama_Barang"].DisplayIndex = 2;
+                dgvTransaksi.Columns["Tanggal"].DisplayIndex = 3;
+                dgvTransaksi.Columns["Jumlah"].DisplayIndex = 4;
+                dgvTransaksi.Columns["Satuan"].DisplayIndex = 5;
+                dgvTransaksi.Columns["Keterangan"].DisplayIndex = 6;
+            }
+            else
+            {
+                dgvTransaksi.Columns["Nama_Barang"].DisplayIndex = 1;
+                dgvTransaksi.Columns["Tanggal"].DisplayIndex = 2;
+                dgvTransaksi.Columns["Jumlah"].DisplayIndex = 3;
+                dgvTransaksi.Columns["Satuan"].DisplayIndex = 4;
+                dgvTransaksi.Columns["Keterangan"].DisplayIndex = 5;
+            }
+            #endregion
+
+            //dgvBarang.Columns[0].Visible = false;
 
             cmbBarang.Items.Clear();
             foreach (DataRow row in data_barang.Rows)
@@ -135,7 +173,7 @@ namespace Program
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(data_transaksi.Rows[0]["tgl"]);
+            //System.Diagnostics.Debug.WriteLine(data_transaksi.Rows[0]["tgl"]);
             switch (status_button_simpan)
             {
                 case global.StatusButtonSimpan.tambah:
@@ -151,9 +189,10 @@ namespace Program
                             var _jml_transaksi = koneksi.dtb_command("SELECT id FROM db_transaksi");
                             if (_jml_transaksi.Rows.Count > 0)
                             {
-                                var _id_max = koneksi.dtb_command("SELECT MAX(id) as max_id FROM db_transaksi").Rows;
-                                _id = int.Parse(_id_max[0]["max_id"].ToString()) + 1;
+                                _jml_transaksi = koneksi.dtb_command("SELECT MAX(id) as max_id FROM db_transaksi");
+                                _id = int.Parse(_jml_transaksi.Rows[0]["max_id"].ToString()) + 1;
                             }
+                            _jml_transaksi.Dispose();
                             var _id_brg = data_barang.Rows[cmbBarang.SelectedIndex]["id"].ToString();
                             var _id_usr = global.id;
                             var _tgl = dtpBarang.Value;
@@ -164,7 +203,6 @@ namespace Program
                                 update_tabel();
                                 MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                            _jml_transaksi.Dispose();
                         }
                     }
                     break;
@@ -186,6 +224,7 @@ namespace Program
                     if (koneksi.query_transaksi("UPDATE", _id, _id_brg, _id_usr, _tgl, _qty, _ket))
                     {
                         update_tabel();
+                        status_button_simpan = global.StatusButtonSimpan.simpan;
                         MessageBox.Show("DATA BERHASIL DIRUBAH !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -207,6 +246,7 @@ namespace Program
                     if (koneksi.query_transaksi("DELETE", _id, _id_brg, _id_usr, _tgl, _qty, _ket))
                     {
                         update_tabel();
+                        status_button_simpan = global.StatusButtonSimpan.simpan;
                         MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

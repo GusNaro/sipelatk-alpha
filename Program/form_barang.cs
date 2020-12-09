@@ -51,6 +51,8 @@ namespace Program
                     { data_barang_dt = koneksi.dtb_command_id(query_data_batang_dt_b, global.id); }
                     
                     dgvBarang.DataSource = data_barang_dt;
+
+                    #region DATA GRID VIEW WIDTH
                     dgvBarang.Columns["ID"].Width = dgvBarang.Width * 8 / 100;
                     dgvBarang.Columns["Nama_Barang"].Width = dgvBarang.Width * 22 / 100;
                     dgvBarang.Columns["Tanggal"].Width = dgvBarang.Width * 12 / 100;
@@ -62,15 +64,47 @@ namespace Program
                         dgvBarang.Columns["Keterangan"].Width = dgvBarang.Width * 15 / 100;
                     }
                     else { dgvBarang.Columns["Keterangan"].Width = dgvBarang.Width * 30 / 100; }
+                    #endregion
+
+                    #region DATA GRID VIEW ORDER
+                    dgvBarang.Columns["ID"].DisplayIndex = 0;
+                    if (global.id_type == global.id_type_admin)
+                    {
+                        dgvBarang.Columns["Pengguna"].DisplayIndex = 1;
+                        dgvBarang.Columns["Nama_Barang"].DisplayIndex = 2;
+                        dgvBarang.Columns["Tanggal"].DisplayIndex = 3;
+                        dgvBarang.Columns["Jumlah"].DisplayIndex = 4;
+                        dgvBarang.Columns["Satuan"].DisplayIndex = 5;
+                        dgvBarang.Columns["Keterangan"].DisplayIndex = 6;
+                    }
+                    else
+                    {
+                        dgvBarang.Columns["Nama_Barang"].DisplayIndex = 1;
+                        dgvBarang.Columns["Tanggal"].DisplayIndex = 2;
+                        dgvBarang.Columns["Jumlah"].DisplayIndex = 3;
+                        dgvBarang.Columns["Satuan"].DisplayIndex = 4;
+                        dgvBarang.Columns["Keterangan"].DisplayIndex = 5;
+                    }
+                    #endregion
                     break;
                 case global.StatusBarang.edit_barang:
                     data_barang = koneksi.dtb_command(query_data_batang);
                     dgvBarang.DataSource = data_barang;
+
+                    #region DATA GRID VIEW WIDTH
                     dgvBarang.Columns["ID_Barang"].Width = dgvBarang.Width * 10 / 100;
                     dgvBarang.Columns["Nama_Barang"].Width = dgvBarang.Width * 35 / 100;
                     dgvBarang.Columns["Satuan"].Width = dgvBarang.Width * 20 / 100;
                     dgvBarang.Columns["Harga"].Width = dgvBarang.Width * 20 / 100;
                     dgvBarang.Columns["Harga"].DefaultCellStyle.Format = "C";
+                    #endregion
+
+                    #region DATA GRID VIEW ORDER
+                    dgvBarang.Columns["ID_Barang"].DisplayIndex = 0;
+                    dgvBarang.Columns["Nama_Barang"].DisplayIndex = 1;
+                    dgvBarang.Columns["Satuan"].DisplayIndex = 2;
+                    dgvBarang.Columns["Harga"].DisplayIndex = 3;
+                    #endregion
 
                     //dgvBarang.Columns[0].Visible = false;
                     break;
@@ -267,11 +301,13 @@ namespace Program
                                 if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                                 {
                                     int _id = 1;
-                                    if (data_barang_dt.Rows.Count > 0)
+                                    var _jml_barang = koneksi.dtb_command("SELECT id FROM db_barang_dt");
+                                    if (_jml_barang.Rows.Count > 0)
                                     {
-                                        var _id_max = koneksi.dtb_command("SELECT MAX(id) AS max_id FROM db_barang_dt").Rows;
-                                        _id = int.Parse(_id_max[0]["max_id"].ToString()) + 1;
+                                        _jml_barang = koneksi.dtb_command("SELECT MAX(id) AS max_id FROM db_barang_dt");
+                                        _id = int.Parse(_jml_barang.Rows[0]["max_id"].ToString()) + 1;
                                     }
+                                    _jml_barang.Dispose();
                                     var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["ID_Barang"].ToString();
                                     var _id_usr = global.id;
                                     var _tgl = dtpTanggal.Value;
@@ -304,6 +340,7 @@ namespace Program
                             {
                                 update_tabel();
                                 clear();
+                                status_button_simpan = global.StatusButtonSimpan.simpan;
                                 MessageBox.Show("DATA BERHASIL DIRUBAH !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
@@ -324,6 +361,7 @@ namespace Program
                             {
                                 update_tabel();
                                 clear();
+                                status_button_simpan = global.StatusButtonSimpan.simpan;
                                 MessageBox.Show("DATA BERHASIL DIRUBAH !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
@@ -347,6 +385,7 @@ namespace Program
                                 {
                                     update_tabel();
                                     clear();
+                                    status_button_simpan = global.StatusButtonSimpan.simpan;
                                     MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                             }
@@ -372,6 +411,7 @@ namespace Program
                             {
                                 update_tabel();
                                 clear();
+                                status_button_simpan = global.StatusButtonSimpan.simpan;
                                 MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }

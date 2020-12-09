@@ -14,14 +14,10 @@ namespace Program
         private global.StatusButtonSimpan sbs;
 
         public form_user()
-        {
-            InitializeComponent();
-        }
+        { InitializeComponent(); }
 
         private void form_user_Load(object sender, EventArgs e)
-        {
-            load_user();
-        }
+        { load_user(); }
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
@@ -35,8 +31,8 @@ namespace Program
                             var berhasil = koneksi.user_query("INSERT", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
                             if (berhasil)
                             {
-                                MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 load_user();
+                                MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
@@ -57,8 +53,9 @@ namespace Program
                     var berhasil = koneksi.user_query("UPDATE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
                     if (berhasil)
                     {
-                        MessageBox.Show("DATA BERHASIL DIUPDATE !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         load_user();
+                        sts_btn_simpan = global.StatusButtonSimpan.simpan;
+                        MessageBox.Show("DATA BERHASIL DIUPDATE !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -73,8 +70,9 @@ namespace Program
                     var berhasil = koneksi.user_query("DELETE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
                     if (berhasil)
                     {
-                        MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        sts_btn_simpan = global.StatusButtonSimpan.simpan;
                         load_user();
+                        MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

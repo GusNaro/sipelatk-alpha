@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblTotalKeseluruhan = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,10 +70,16 @@
             // 
             // dgvLaporan
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvLaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLaporan.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvLaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLaporan.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLaporan.Location = new System.Drawing.Point(24, 130);
             this.dgvLaporan.Name = "dgvLaporan";
             this.dgvLaporan.ReadOnly = true;
@@ -81,10 +88,10 @@
             // 
             // btnExport
             // 
-            this.btnExport.Enabled = false;
-            this.btnExport.Location = new System.Drawing.Point(1057, 31);
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Location = new System.Drawing.Point(1043, 20);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 70);
+            this.btnExport.Size = new System.Drawing.Size(89, 90);
             this.btnExport.TabIndex = 4;
             this.btnExport.Text = "EXPORT KE EXCEL";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -134,11 +141,23 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Sampai Dengan";
             // 
+            // lblTotalKeseluruhan
+            // 
+            this.lblTotalKeseluruhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalKeseluruhan.Location = new System.Drawing.Point(609, 48);
+            this.lblTotalKeseluruhan.Name = "lblTotalKeseluruhan";
+            this.lblTotalKeseluruhan.Size = new System.Drawing.Size(407, 28);
+            this.lblTotalKeseluruhan.TabIndex = 9;
+            this.lblTotalKeseluruhan.Text = "====";
+            this.lblTotalKeseluruhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // form_laporan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(1134, 682);
+            this.Controls.Add(this.lblTotalKeseluruhan);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -149,7 +168,7 @@
             this.Controls.Add(this.dtpSampai);
             this.Controls.Add(this.dtpDari);
             this.Name = "form_laporan";
-            this.Size = new System.Drawing.Size(1150, 720);
+            this.Load += new System.EventHandler(this.form_laporan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,5 +186,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblTotalKeseluruhan;
     }
 }

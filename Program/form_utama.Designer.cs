@@ -106,11 +106,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Program.Properties.Resources.bpd_logo_hires;
+            this.pictureBox1.Image = global::Program.Properties.Resources.ico;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(350, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(316, 31);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(450, 450);
+            this.pictureBox1.Size = new System.Drawing.Size(520, 476);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
