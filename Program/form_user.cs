@@ -17,7 +17,11 @@ namespace Program
         { InitializeComponent(); }
 
         private void form_user_Load(object sender, EventArgs e)
-        { load_user(); }
+        {
+            cmbCabang.Items.Clear();
+            cmbCabang.Items.AddRange(global.unit_kerja);
+            load_user();
+        }
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
@@ -161,7 +165,7 @@ namespace Program
         {
             sts_btn_simpan = global.StatusButtonSimpan.simpan;
             clear();
-            var _data_user = koneksi.dtb_command("SELECT id AS ID_USER, nama AS NAMA, pass AS PASSOWRD,  CASE type WHEN 1 THEN 'Admin' WHEN 2 THEN 'Barang' WHEN 3 THEN 'Inventaris' WHEN 4 THEN 'Laporan' END AS TYPE_USER, cabang AS CABANG FROM db_user");
+            var _data_user = koneksi.dtb_command("SELECT id AS ID_USER, nama AS NAMA_PEGAWAI, pass AS PASSOWRD,  CASE type WHEN 1 THEN 'Admin' WHEN 2 THEN 'Barang' WHEN 3 THEN 'Inventaris' WHEN 4 THEN 'Laporan' END AS TYPE_USER, uk AS UNIT_KERJA FROM db_user");
             dgvUser.DataSource = _data_user;
             dgvUser.Columns[0].Width = dgvUser.Width * 15 / 100;
             dgvUser.Columns[1].Width = dgvUser.Width * 25 / 100;

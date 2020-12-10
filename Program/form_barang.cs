@@ -11,9 +11,9 @@ namespace Program
 {
     public partial class form_barang : Form
     {
-        private const string query_data_batang = "SELECT id AS ID_Barang, nama AS Nama_Barang, satuan AS Satuan, harga AS Harga FROM db_barang";
-        private const string query_data_batang_dt_a = "SELECT d.id AS ID, b.nama AS Nama_Barang, d.tgl AS Tanggal, d.qty AS Jumlah, b.satuan AS Satuan, u.nama AS Pengguna, d.ket AS Keterangan FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id LEFT JOIN db_user AS u ON d.id_user = u.id";
-        private const string query_data_batang_dt_b = "SELECT d.id AS ID, b.nama AS Nama_Barang, d.tgl AS Tanggal, d.qty AS Jumlah, b.satuan AS Satuan, d.ket AS Keterangan FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id WHERE d.id_user=(@id_user)";
+        private const string query_data_batang = "SELECT id AS ID_BARANG, nama AS NAMA_BARANG, satuan AS SATUAN, harga AS HARGA FROM db_barang";
+        private const string query_data_batang_dt_a = "SELECT d.id AS ID, b.nama AS NAMA_BARANG, d.tgl AS TANGGAL, d.qty AS JUMLAH, b.satuan AS SATUAN, u.nama AS PENGGUNA, d.ket AS KETERANGAN FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id LEFT JOIN db_user AS u ON d.id_user = u.id";
+        private const string query_data_batang_dt_b = "SELECT d.id AS ID, b.nama AS NAMA_BARANG, d.tgl AS TANGGAL, d.qty AS JUMLAH, b.satuan AS SATUAN, d.ket AS KETERANGAN FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id WHERE d.id_user=(@id_user)";
 
         private DataTable data_barang, data_barang_dt;
         private global.StatusBarang sts_brg;
@@ -57,33 +57,33 @@ namespace Program
                     dgvBarang.Columns["Nama_Barang"].Width = dgvBarang.Width * 22 / 100;
                     dgvBarang.Columns["Tanggal"].Width = dgvBarang.Width * 12 / 100;
                     dgvBarang.Columns["Jumlah"].Width = dgvBarang.Width * 8 / 100;
-                    dgvBarang.Columns["Satuan"].Width = dgvBarang.Width * 15 / 100;
+                    dgvBarang.Columns["SATUAN"].Width = dgvBarang.Width * 15 / 100;
                     if (global.id_type == global.id_type_admin)
                     {
-                        dgvBarang.Columns["Pengguna"].Width = dgvBarang.Width * 15 / 100;
-                        dgvBarang.Columns["Keterangan"].Width = dgvBarang.Width * 15 / 100;
+                        dgvBarang.Columns["PENGGUNA"].Width = dgvBarang.Width * 15 / 100;
+                        dgvBarang.Columns["KETERANGAN"].Width = dgvBarang.Width * 15 / 100;
                     }
-                    else { dgvBarang.Columns["Keterangan"].Width = dgvBarang.Width * 30 / 100; }
+                    else { dgvBarang.Columns["KETERANGAN"].Width = dgvBarang.Width * 30 / 100; }
                     #endregion
 
                     #region DATA GRID VIEW ORDER
                     dgvBarang.Columns["ID"].DisplayIndex = 0;
                     if (global.id_type == global.id_type_admin)
                     {
-                        dgvBarang.Columns["Pengguna"].DisplayIndex = 1;
-                        dgvBarang.Columns["Nama_Barang"].DisplayIndex = 2;
-                        dgvBarang.Columns["Tanggal"].DisplayIndex = 3;
-                        dgvBarang.Columns["Jumlah"].DisplayIndex = 4;
-                        dgvBarang.Columns["Satuan"].DisplayIndex = 5;
-                        dgvBarang.Columns["Keterangan"].DisplayIndex = 6;
+                        dgvBarang.Columns["PENGGUNA"].DisplayIndex = 1;
+                        dgvBarang.Columns["NAMA_BARANG"].DisplayIndex = 2;
+                        dgvBarang.Columns["TANGGAL"].DisplayIndex = 3;
+                        dgvBarang.Columns["JUMLAH"].DisplayIndex = 4;
+                        dgvBarang.Columns["SATUAN"].DisplayIndex = 5;
+                        dgvBarang.Columns["KETERANGAN"].DisplayIndex = 6;
                     }
                     else
                     {
-                        dgvBarang.Columns["Nama_Barang"].DisplayIndex = 1;
-                        dgvBarang.Columns["Tanggal"].DisplayIndex = 2;
-                        dgvBarang.Columns["Jumlah"].DisplayIndex = 3;
-                        dgvBarang.Columns["Satuan"].DisplayIndex = 4;
-                        dgvBarang.Columns["Keterangan"].DisplayIndex = 5;
+                        dgvBarang.Columns["NAMA_BARANG"].DisplayIndex = 1;
+                        dgvBarang.Columns["TANGGAL"].DisplayIndex = 2;
+                        dgvBarang.Columns["JUMLAH"].DisplayIndex = 3;
+                        dgvBarang.Columns["SATUAN"].DisplayIndex = 4;
+                        dgvBarang.Columns["KETERANGAN"].DisplayIndex = 5;
                     }
                     #endregion
                     break;
@@ -92,18 +92,18 @@ namespace Program
                     dgvBarang.DataSource = data_barang;
 
                     #region DATA GRID VIEW WIDTH
-                    dgvBarang.Columns["ID_Barang"].Width = dgvBarang.Width * 10 / 100;
-                    dgvBarang.Columns["Nama_Barang"].Width = dgvBarang.Width * 35 / 100;
-                    dgvBarang.Columns["Satuan"].Width = dgvBarang.Width * 20 / 100;
-                    dgvBarang.Columns["Harga"].Width = dgvBarang.Width * 20 / 100;
-                    dgvBarang.Columns["Harga"].DefaultCellStyle.Format = "C";
+                    dgvBarang.Columns["ID_BARANG"].Width = dgvBarang.Width * 10 / 100;
+                    dgvBarang.Columns["NAMA_BARANG"].Width = dgvBarang.Width * 35 / 100;
+                    dgvBarang.Columns["SATUAN"].Width = dgvBarang.Width * 20 / 100;
+                    dgvBarang.Columns["HARGA"].Width = dgvBarang.Width * 20 / 100;
+                    dgvBarang.Columns["HARGA"].DefaultCellStyle.Format = "C";
                     #endregion
 
                     #region DATA GRID VIEW ORDER
-                    dgvBarang.Columns["ID_Barang"].DisplayIndex = 0;
-                    dgvBarang.Columns["Nama_Barang"].DisplayIndex = 1;
-                    dgvBarang.Columns["Satuan"].DisplayIndex = 2;
-                    dgvBarang.Columns["Harga"].DisplayIndex = 3;
+                    dgvBarang.Columns["ID_BARANG"].DisplayIndex = 0;
+                    dgvBarang.Columns["NAMA_BARANG"].DisplayIndex = 1;
+                    dgvBarang.Columns["SATUAN"].DisplayIndex = 2;
+                    dgvBarang.Columns["HARGA"].DisplayIndex = 3;
                     #endregion
 
                     //dgvBarang.Columns[0].Visible = false;

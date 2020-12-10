@@ -36,16 +36,16 @@ namespace Program
         #endregion
 
         #region USER
-        public static bool user_query(string cmmd, string id, string nama, string pass, int type, string cabang)
+        public static bool user_query(string cmmd, string id, string nama, string pass, int type, string uk)
         {
             string command = "";
             switch (cmmd)
             {
                 case "INSERT":
-                    command = "INSERT INTO db_user VALUES (@id, @nama, @pass, @type, @cabang)";
+                    command = "INSERT INTO db_user VALUES (@id, @nama, @pass, @type, @uk)";
                     break;
                 case "UPDATE":
-                    command = "UPDATE db_user SET nama=(@nama), pass=(@pass), type=(@type), cabang=(@cabang) WHERE  ID = (@id)";
+                    command = "UPDATE db_user SET nama=(@nama), pass=(@pass), type=(@type), uk=(@uk) WHERE  ID = (@id)";
                     break;
                 case "DELETE":
                     command = "DELETE FROM db_user WHERE ID = (@id)";
@@ -58,7 +58,7 @@ namespace Program
                 cmd.Parameters.AddWithValue("@nama", nama);
                 cmd.Parameters.AddWithValue("@pass", pass);
                 cmd.Parameters.AddWithValue("@type", type);
-                cmd.Parameters.AddWithValue("@cabang", cabang);
+                cmd.Parameters.AddWithValue("@uk", uk);
             }
             else if (cmmd == "DELETE")
             { cmd.Parameters.AddWithValue("@id", id); }
@@ -78,7 +78,6 @@ namespace Program
         #endregion
 
         #region BARANG
-
         public static bool status_id_barang_dt(string id)
         {
             var cmd = new SqlCommand("SELECT id FROM db_barang_dt WHERE (id_barang=@ID)", conn);

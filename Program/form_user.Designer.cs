@@ -222,21 +222,6 @@
             // 
             this.cmbCabang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCabang.FormattingEnabled = true;
-            this.cmbCabang.Items.AddRange(new object[] {
-            "Renon",
-            "Denpasar",
-            "Badung",
-            "Mangupura",
-            "Tabanan",
-            "Singaraja",
-            "Seririt",
-            "Negara",
-            "Gianyar",
-            "Ubud",
-            "Klungkung",
-            "Bangli",
-            "Karangasem",
-            "Mataram"});
             this.cmbCabang.Location = new System.Drawing.Point(262, 274);
             this.cmbCabang.Name = "cmbCabang";
             this.cmbCabang.Size = new System.Drawing.Size(313, 28);
@@ -248,9 +233,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(50, 277);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 20);
+            this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Cabang";
+            this.label7.Text = "Unit Kerja";
             // 
             // form_user
             // 

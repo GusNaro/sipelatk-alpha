@@ -31,17 +31,17 @@ namespace Program
         #region METHOD
         private void update_tabel()
         {
-            var cmmd = "SELECT b.id AS ID, b.nama AS Nama_Barang, b.satuan AS Satuan, ISNULL(d.qty_b, 0) - ISNULL(t.qty_t, 0) AS Jumlah FROM db_barang AS b LEFT OUTER JOIN (SELECT id_barang, SUM(qty) AS qty_b FROM db_barang_dt GROUP BY id_barang) AS d ON b.id = d.id_barang LEFT OUTER JOIN (SELECT id_barang, SUM(qty) AS qty_t FROM db_transaksi GROUP BY id_barang) AS t ON b.id = t.id_barang";
+            var cmmd = "SELECT b.id AS ID, b.nama AS NAMA_BARANG, b.satuan AS SATUAN, ISNULL(d.qty_b, 0) - ISNULL(t.qty_t, 0) AS JUMLAH FROM db_barang AS b LEFT OUTER JOIN (SELECT id_barang, SUM(qty) AS qty_b FROM db_barang_dt GROUP BY id_barang) AS d ON b.id = d.id_barang LEFT OUTER JOIN (SELECT id_barang, SUM(qty) AS qty_t FROM db_transaksi GROUP BY id_barang) AS t ON b.id = t.id_barang";
             data_barang = koneksi.dtb_command(cmmd);
             if (global.id_type == global.id_type_admin)
             {
                 data_transaksi = koneksi.dtb_command("SELECT * FROM db_transaksi");
-                dgvTransaksi.DataSource = koneksi.dtb_command("SELECT t.id AS ID, u.nama AS Pengguna, b.nama AS Nama_Barang, t.tgl AS Tanggal, t.qty AS Jumlah, b.satuan AS Satuan, t.ket AS Keterangan FROM db_transaksi AS t LEFT OUTER JOIN db_barang AS b ON t.id_barang = b.id LEFT OUTER JOIN db_user AS u ON t.id_user = u.id");
+                dgvTransaksi.DataSource = koneksi.dtb_command("SELECT t.id AS ID, u.nama AS PENGGUNA, b.nama AS NAMA_BARANG, t.tgl AS TANGGAL, t.qty AS JUMLAH, b.satuan AS SATUAN, t.ket AS KETERANGAN FROM db_transaksi AS t LEFT OUTER JOIN db_barang AS b ON t.id_barang = b.id LEFT OUTER JOIN db_user AS u ON t.id_user = u.id");
             }
             else if (global.id_type == global.id_type_barang || global.id_type == global.id_type_inventaris)
             {
                 data_transaksi = koneksi.dtb_command_id("SELECT * FROM db_transaksi WHERE id_user=(@id_user)", global.id);
-                dgvTransaksi.DataSource = koneksi.dtb_command_id("SELECT t.id AS ID, b.nama AS Nama_Barang, t.tgl AS Tanggal, t.qty AS Jumlah, b.satuan AS Satuan, t.ket AS Keterangan FROM db_transaksi AS t LEFT OUTER JOIN db_barang AS b ON t.id_barang = b.id WHERE t.id_user=(@id_user)", global.id);
+                dgvTransaksi.DataSource = koneksi.dtb_command_id("SELECT t.id AS ID, b.nama AS NAMA_BARANG, t.tgl AS TANGGAL, t.qty AS JUMLAH, b.satuan AS SATUAN, t.ket AS KETERANGAN FROM db_transaksi AS t LEFT OUTER JOIN db_barang AS b ON t.id_barang = b.id WHERE t.id_user=(@id_user)", global.id);
             }
 
             #region DATA GRID VIEW WIDTH

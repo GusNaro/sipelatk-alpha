@@ -21,12 +21,11 @@ namespace Program
             var time = DateTime.Now;
             lblDate.Text = time.ToLongDateString();
             lblTime.Text = time.ToShortTimeString();
-            lblTimeSec.Text = time.Second.ToString();
+            lblTimeSec.Text = time.Second.ToString("D2");
         }
 
         private void form_utama_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

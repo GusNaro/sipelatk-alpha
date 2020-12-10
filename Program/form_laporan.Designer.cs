@@ -34,11 +34,11 @@
             this.cmbList = new System.Windows.Forms.ComboBox();
             this.dgvLaporan = new System.Windows.Forms.DataGridView();
             this.btnExport = new System.Windows.Forms.Button();
-            this.btnTampil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotalKeseluruhan = new System.Windows.Forms.Label();
+            this.btnTampil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,28 +88,17 @@
             // 
             // btnExport
             // 
-            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.Image = global::Program.Properties.Resources.excel;
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExport.Location = new System.Drawing.Point(1043, 20);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(89, 90);
+            this.btnExport.Size = new System.Drawing.Size(90, 90);
             this.btnExport.TabIndex = 4;
-            this.btnExport.Text = "EXPORT KE EXCEL";
+            this.btnExport.Text = "EXPORT";
+            this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
-            // 
-            // btnTampil
-            // 
-            this.btnTampil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTampil.Image = global::Program.Properties.Resources.print;
-            this.btnTampil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTampil.Location = new System.Drawing.Point(455, 23);
-            this.btnTampil.Name = "btnTampil";
-            this.btnTampil.Size = new System.Drawing.Size(125, 85);
-            this.btnTampil.TabIndex = 3;
-            this.btnTampil.Text = "TAMPILKAN";
-            this.btnTampil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTampil.UseVisualStyleBackColor = true;
-            this.btnTampil.Click += new System.EventHandler(this.btnTampil_Click);
             // 
             // label1
             // 
@@ -150,6 +139,20 @@
             this.lblTotalKeseluruhan.TabIndex = 9;
             this.lblTotalKeseluruhan.Text = "====";
             this.lblTotalKeseluruhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnTampil
+            // 
+            this.btnTampil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTampil.Image = global::Program.Properties.Resources.print;
+            this.btnTampil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTampil.Location = new System.Drawing.Point(455, 23);
+            this.btnTampil.Name = "btnTampil";
+            this.btnTampil.Size = new System.Drawing.Size(125, 85);
+            this.btnTampil.TabIndex = 3;
+            this.btnTampil.Text = "TAMPILKAN";
+            this.btnTampil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTampil.UseVisualStyleBackColor = true;
+            this.btnTampil.Click += new System.EventHandler(this.btnTampil_Click);
             // 
             // form_laporan
             // 
