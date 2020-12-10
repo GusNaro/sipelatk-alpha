@@ -104,12 +104,105 @@
             // 
             // button3
             // 
+<<<<<<< Updated upstream
             this.button3.Location = new System.Drawing.Point(506, 240);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "HAPUS";
             this.button3.UseVisualStyleBackColor = true;
+=======
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Image = global::Program.Properties.Resources.delete;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDelete.Location = new System.Drawing.Point(983, 212);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(130, 85);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "HAPUS";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "NRK";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(50, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Nama";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(50, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Masukkan Password";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(50, 193);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(189, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Masukkan Password Lagi";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(50, 235);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(86, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Hak Akses";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(21, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(384, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Daftarkan diri anda disini (hanya administrator)";
+            // 
+            // cmbCabang
+            // 
+            this.cmbCabang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCabang.FormattingEnabled = true;
+            this.cmbCabang.Location = new System.Drawing.Point(262, 274);
+            this.cmbCabang.Name = "cmbCabang";
+            this.cmbCabang.Size = new System.Drawing.Size(313, 28);
+            this.cmbCabang.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(50, 277);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 20);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Unit Kerja";
+>>>>>>> Stashed changes
             // 
             // form_user
             // 
