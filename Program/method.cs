@@ -21,8 +21,8 @@ namespace Program
                     nama = new string[] { "BERANDA", "USER", "BARANG", "INVENTARIS", "LAPORAN", "KELUAR" };
                     break;
                 case global.id_type_barang:
-                    value = new bool[] { true, true, false, false, false, true };
-                    nama = new string[] { "BERANDA", "BARANG", "", "", "", "KELUAR" };
+                    value = new bool[] { true, true, true, true, false, true };
+                    nama = new string[] { "BERANDA", "BARANG", "INVENTARIS", "LAPORAN", "", "KELUAR" };
                     break;
                 case global.id_type_inventaris:
                     value = new bool[] { true, true, true, false, false, true };
@@ -64,17 +64,8 @@ namespace Program
 
 
 
-        #region SAMPLE
-        #endregion
-        #region SAMPLE
-        #endregion
-        #region SAMPLE
-        #endregion
-        #region SAMPLE
-        #endregion
-        #region SAMPLE
-        #endregion
-        #region SAMPLE
+        #region ICON DOWNLOAD
+        //https://icons8.com/icon/set/change/fluent-systems-filled
         #endregion
     }
 }

@@ -9,67 +9,48 @@ using System.Windows.Forms;
 
 namespace Program
 {
-    public partial class form_login : UserControl
+    public partial class form_login : Form
     {
         public form_login()
         {
             InitializeComponent();
         }
 
-        protected override void OnVisibleChanged(EventArgs e)
+        private void form_login_Load(object sender, EventArgs e)
         {
-            base.OnVisibleChanged(e);
+            txtID.Text = string.Empty;
+            txtPW.Text = string.Empty;
 
-            txtID.Text = null;
-            txtPW.Text = null;
-            method.tampilkan_button();
+            txtID.Focus();
         }
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            if (txtID.Text != "" || txtPW.Text != "")
+            if (txtID.Text != string.Empty || txtPW.Text != string.Empty)
             {
                 var data = koneksi.login(txtID.Text);
-                if (data[1] == txtPW.Text)
+                if (data[0] == txtID.Text && data[2] == txtPW.Text)
                 {
                     global.id = txtID.Text;
-                    global.id_nama = data[0];
-                    global.id_type = int.Parse(data[2]);
-                    form_app.app.panel_button_top("BERANDA");
-                    form_app.app.panel_utama.Controls["form_login"].Hide();
-                    form_app.app.panel_utama.Controls["form_utama"].Show();
+                    global.id_nama = data[1];
+                    global.id_type = int.Parse(data[3]);
+                    method.tampilkan_button();
+                    form_app.app.buka_form_utama();
                 }
                 else
-                { MessageBox.Show("user dan password salah !!!!"); }
+                {
+                    MessageBox.Show("USER DAN PASSWORD SALAH !!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
-                //if (txtID.Text == "satu" && txtPW.Text == "123")
-                //{
-                //    global.id = txtID.Text;
-                //    global.id_type = 1;
-                //    form_app.app.panel_utama.Controls["form_login"].Hide();
-                //    form_app.app.panel_utama.Controls["form_utama"].Show();
-                //}
-                //else if (txtID.Text == "dua" && txtPW.Text == "123")
-                //{
-                //    global.id = txtID.Text;
-                //    global.id_type = 2;
-                //    form_app.app.panel_utama.Controls["form_login"].Hide();
-                //    form_app.app.panel_utama.Controls["form_utama"].Show();
-                //}
-                //else if (txtID.Text == "tiga" && txtPW.Text == "123")
-                //{
-                //    global.id = txtID.Text;
-                //    global.id_type = 3;
-                //    form_app.app.panel_utama.Controls["form_login"].Hide();
-                //    form_app.app.panel_utama.Controls["form_utama"].Show();
-                //}
-                //else if (txtID.Text == "empat" && txtPW.Text == "123")
-                //{
-                //    global.id = txtID.Text;
-                //    global.id_type = 4;
-                //    form_app.app.panel_utama.Controls["form_login"].Hide();
-                //    form_app.app.panel_utama.Controls["form_utama"].Show();
-                //}
+        private void txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtID.Text == string.Empty) { txtID.Focus(); }
+                else if (txtPW.Text == string.Empty) { txtPW.Focus(); }
+                else { btn_login_Click(this, new EventArgs()); }
             }
         }
 
