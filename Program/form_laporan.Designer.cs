@@ -28,21 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< Updated upstream
-            this.SuspendLayout();
-            // 
-=======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtpDari = new System.Windows.Forms.DateTimePicker();
             this.dtpSampai = new System.Windows.Forms.DateTimePicker();
             this.cmbList = new System.Windows.Forms.ComboBox();
             this.dgvLaporan = new System.Windows.Forms.DataGridView();
             this.btnExport = new System.Windows.Forms.Button();
+            this.btnTampil = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblTotalKeseluruhan = new System.Windows.Forms.Label();
-            this.btnTampil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,16 +69,10 @@
             // 
             // dgvLaporan
             // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvLaporan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLaporan.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvLaporan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLaporan.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLaporan.Location = new System.Drawing.Point(24, 130);
             this.dgvLaporan.Name = "dgvLaporan";
             this.dgvLaporan.ReadOnly = true;
@@ -92,17 +81,28 @@
             // 
             // btnExport
             // 
-            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Image = global::Program.Properties.Resources.excel;
-            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExport.Location = new System.Drawing.Point(1043, 20);
+            this.btnExport.Enabled = false;
+            this.btnExport.Location = new System.Drawing.Point(1057, 31);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(90, 90);
+            this.btnExport.Size = new System.Drawing.Size(75, 70);
             this.btnExport.TabIndex = 4;
-            this.btnExport.Text = "EXPORT";
-            this.btnExport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExport.Text = "EXPORT KE EXCEL";
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // btnTampil
+            // 
+            this.btnTampil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTampil.Image = global::Program.Properties.Resources.print;
+            this.btnTampil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTampil.Location = new System.Drawing.Point(455, 23);
+            this.btnTampil.Name = "btnTampil";
+            this.btnTampil.Size = new System.Drawing.Size(125, 85);
+            this.btnTampil.TabIndex = 3;
+            this.btnTampil.Text = "TAMPILKAN";
+            this.btnTampil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTampil.UseVisualStyleBackColor = true;
+            this.btnTampil.Click += new System.EventHandler(this.btnTampil_Click);
             // 
             // label1
             // 
@@ -134,41 +134,38 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Sampai Dengan";
             // 
-            // lblTotalKeseluruhan
-            // 
-            this.lblTotalKeseluruhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalKeseluruhan.Location = new System.Drawing.Point(609, 48);
-            this.lblTotalKeseluruhan.Name = "lblTotalKeseluruhan";
-            this.lblTotalKeseluruhan.Size = new System.Drawing.Size(407, 28);
-            this.lblTotalKeseluruhan.TabIndex = 9;
-            this.lblTotalKeseluruhan.Text = "====";
-            this.lblTotalKeseluruhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnTampil
-            // 
-            this.btnTampil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTampil.Image = global::Program.Properties.Resources.print;
-            this.btnTampil.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTampil.Location = new System.Drawing.Point(455, 23);
-            this.btnTampil.Name = "btnTampil";
-            this.btnTampil.Size = new System.Drawing.Size(125, 85);
-            this.btnTampil.TabIndex = 3;
-            this.btnTampil.Text = "TAMPILKAN";
-            this.btnTampil.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTampil.UseVisualStyleBackColor = true;
-            this.btnTampil.Click += new System.EventHandler(this.btnTampil_Click);
-            // 
->>>>>>> Stashed changes
             // form_laporan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Size = new System.Drawing.Size(1150, 720);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnTampil);
+            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.dgvLaporan);
+            this.Controls.Add(this.cmbList);
+            this.Controls.Add(this.dtpSampai);
+            this.Controls.Add(this.dtpDari);
             this.Name = "form_laporan";
+            this.Size = new System.Drawing.Size(1150, 720);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLaporan)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker dtpDari;
+        private System.Windows.Forms.DateTimePicker dtpSampai;
+        private System.Windows.Forms.ComboBox cmbList;
+        private System.Windows.Forms.DataGridView dgvLaporan;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Button btnTampil;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

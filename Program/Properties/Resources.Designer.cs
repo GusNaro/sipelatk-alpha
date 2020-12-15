@@ -19,7 +19,7 @@ namespace Program.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace Program.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap blur_branches_daylight_355296 {
+        internal static System.Drawing.Bitmap barang_a {
             get {
-                object obj = ResourceManager.GetObject("blur-branches-daylight-355296", resourceCulture);
+                object obj = ResourceManager.GetObject("barang_a", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,11 +73,8 @@ namespace Program.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bpd_logo {
+        internal static System.Drawing.Bitmap barang_b {
             get {
-<<<<<<< Updated upstream
-                object obj = ResourceManager.GetObject("bpd_logo", resourceCulture);
-=======
                 object obj = ResourceManager.GetObject("barang_b", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
@@ -129,26 +126,6 @@ namespace Program.Properties {
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap excel {
-            get {
-                object obj = ResourceManager.GetObject("excel", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ico {
-            get {
-                object obj = ResourceManager.GetObject("ico", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,16 +243,6 @@ namespace Program.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tambah {
-            get {
-                object obj = ResourceManager.GetObject("tambah", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap update {
             get {
                 object obj = ResourceManager.GetObject("update", resourceCulture);
@@ -299,7 +266,6 @@ namespace Program.Properties {
         internal static System.Drawing.Bitmap user_b {
             get {
                 object obj = ResourceManager.GetObject("user_b", resourceCulture);
->>>>>>> Stashed changes
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
