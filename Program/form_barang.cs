@@ -11,9 +11,9 @@ namespace Program
 {
     public partial class form_barang : Form
     {
-        private const string query_data_batang = "SELECT id AS ID_BARANG, nama AS NAMA_BARANG, satuan AS SATUAN, harga AS HARGA FROM db_barang";
-        private const string query_data_batang_dt_a = "SELECT d.id AS ID, b.nama AS NAMA_BARANG, d.tgl AS TANGGAL, d.qty AS JUMLAH, b.satuan AS SATUAN, u.nama AS PENGGUNA, d.ket AS KETERANGAN FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id LEFT JOIN db_user AS u ON d.id_user = u.id";
-        private const string query_data_batang_dt_b = "SELECT d.id AS ID, b.nama AS NAMA_BARANG, d.tgl AS TANGGAL, d.qty AS JUMLAH, b.satuan AS SATUAN, d.ket AS KETERANGAN FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id WHERE d.id_user=(@id_user)";
+        private const string query_data_barang = "SELECT id AS [KODE BARANG], nama AS [NAMA BARANG], satuan AS SATUAN, harga AS HARGA, penyedia AS PENYEDIA FROM db_barang";
+        private const string query_data_barang_dt_a = "SELECT d.id AS ID, b.nama AS [NAMA BARANG], d.tgl AS TANGGAL, d.qty AS JUMLAH, b.satuan AS SATUAN, u.nama AS PENGGUNA, d.ket AS KETERANGAN FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id LEFT JOIN db_user AS u ON d.id_user = u.id";
+        private const string query_data_barang_dt_b = "SELECT d.id AS ID, b.nama AS [NAMA BARANG], d.tgl AS TANGGAL, d.qty AS JUMLAH, b.satuan AS SATUAN, d.ket AS KETERANGAN FROM db_barang_dt AS d LEFT JOIN db_barang AS b ON d.id_barang = b.id WHERE d.id_user=(@id_user)";
 
         private DataTable data_barang, data_barang_dt;
         private global.StatusBarang sts_brg;
@@ -26,7 +26,7 @@ namespace Program
 
         private void form_barang_Load(object sender, EventArgs e)
         {
-            data_barang = koneksi.dtb_command(query_data_batang);
+            data_barang = koneksi.dtb_command(query_data_barang);
             data_barang_dt = new DataTable();
 
             status_barang = global.StatusBarang.edit_detail_barang;
@@ -43,27 +43,24 @@ namespace Program
                 case global.StatusBarang.edit_detail_barang:
                     cmbNamaBarang.Items.Clear();
                     foreach (DataRow row in data_barang.Rows)
-                    { cmbNamaBarang.Items.Add(row["Nama_Barang"]); }
+                    { cmbNamaBarang.Items.Add(row["Nama Barang"]); }
 
                     if (global.id_type == global.id_type_admin)
-                    { data_barang_dt = koneksi.dtb_command(query_data_batang_dt_a); }
+                    { data_barang_dt = koneksi.dtb_command(query_data_barang_dt_a); }
                     else if (global.id_type == global.id_type_barang || global.id_type == global.id_type_inventaris)
-                    { data_barang_dt = koneksi.dtb_command_id(query_data_batang_dt_b, global.id); }
+                    { data_barang_dt = koneksi.dtb_command_id(query_data_barang_dt_b, global.id); }
                     
                     dgvBarang.DataSource = data_barang_dt;
 
                     #region DATA GRID VIEW WIDTH
-                    dgvBarang.Columns["ID"].Width = dgvBarang.Width * 8 / 100;
-                    dgvBarang.Columns["Nama_Barang"].Width = dgvBarang.Width * 22 / 100;
+                    dgvBarang.Columns["ID"].Width = dgvBarang.Width * 5 / 100;
+                    dgvBarang.Columns["Nama Barang"].Width = dgvBarang.Width * 30 / 100;
                     dgvBarang.Columns["Tanggal"].Width = dgvBarang.Width * 12 / 100;
                     dgvBarang.Columns["Jumlah"].Width = dgvBarang.Width * 8 / 100;
                     dgvBarang.Columns["SATUAN"].Width = dgvBarang.Width * 15 / 100;
+                    dgvBarang.Columns["KETERANGAN"].Width = dgvBarang.Width * 30 / 100;
                     if (global.id_type == global.id_type_admin)
-                    {
-                        dgvBarang.Columns["PENGGUNA"].Width = dgvBarang.Width * 15 / 100;
-                        dgvBarang.Columns["KETERANGAN"].Width = dgvBarang.Width * 15 / 100;
-                    }
-                    else { dgvBarang.Columns["KETERANGAN"].Width = dgvBarang.Width * 30 / 100; }
+                    { dgvBarang.Columns["PENGGUNA"].Width = dgvBarang.Width * 15 / 100; }
                     #endregion
 
                     #region DATA GRID VIEW ORDER
@@ -71,7 +68,7 @@ namespace Program
                     if (global.id_type == global.id_type_admin)
                     {
                         dgvBarang.Columns["PENGGUNA"].DisplayIndex = 1;
-                        dgvBarang.Columns["NAMA_BARANG"].DisplayIndex = 2;
+                        dgvBarang.Columns["NAMA BARANG"].DisplayIndex = 2;
                         dgvBarang.Columns["TANGGAL"].DisplayIndex = 3;
                         dgvBarang.Columns["JUMLAH"].DisplayIndex = 4;
                         dgvBarang.Columns["SATUAN"].DisplayIndex = 5;
@@ -88,22 +85,24 @@ namespace Program
                     #endregion
                     break;
                 case global.StatusBarang.edit_barang:
-                    data_barang = koneksi.dtb_command(query_data_batang);
+                    data_barang = koneksi.dtb_command(query_data_barang);
                     dgvBarang.DataSource = data_barang;
 
                     #region DATA GRID VIEW WIDTH
-                    dgvBarang.Columns["ID_BARANG"].Width = dgvBarang.Width * 10 / 100;
-                    dgvBarang.Columns["NAMA_BARANG"].Width = dgvBarang.Width * 35 / 100;
-                    dgvBarang.Columns["SATUAN"].Width = dgvBarang.Width * 20 / 100;
-                    dgvBarang.Columns["HARGA"].Width = dgvBarang.Width * 20 / 100;
+                    dgvBarang.Columns["KODE BARANG"].Width = dgvBarang.Width * 10 / 100;
+                    dgvBarang.Columns["NAMA BARANG"].Width = dgvBarang.Width * 30 / 100;
+                    dgvBarang.Columns["SATUAN"].Width = dgvBarang.Width * 15 / 100;
+                    dgvBarang.Columns["HARGA"].Width = dgvBarang.Width * 15 / 100;
                     dgvBarang.Columns["HARGA"].DefaultCellStyle.Format = "C";
+                    dgvBarang.Columns["PENYEDIA"].Width = dgvBarang.Width * 20 / 100;
                     #endregion
 
                     #region DATA GRID VIEW ORDER
-                    dgvBarang.Columns["ID_BARANG"].DisplayIndex = 0;
-                    dgvBarang.Columns["NAMA_BARANG"].DisplayIndex = 1;
+                    dgvBarang.Columns["KODE BARANG"].DisplayIndex = 0;
+                    dgvBarang.Columns["NAMA BARANG"].DisplayIndex = 1;
                     dgvBarang.Columns["SATUAN"].DisplayIndex = 2;
                     dgvBarang.Columns["HARGA"].DisplayIndex = 3;
+                    dgvBarang.Columns["PENYEDIA"].DisplayIndex = 4;
                     #endregion
 
                     //dgvBarang.Columns[0].Visible = false;
@@ -128,6 +127,7 @@ namespace Program
                         txtNamaB.Enabled = false;
                         txtSatuanB.Enabled = false;
                         txtHargaB.Enabled = false;
+                        txtPenyediaB.Enabled = false;
                         grbBarang.BackColor = System.Drawing.Color.WhiteSmoke;
                         break;
                     case global.StatusBarang.edit_barang:
@@ -140,6 +140,7 @@ namespace Program
                         txtNamaB.Enabled = true;
                         txtSatuanB.Enabled = true;
                         txtHargaB.Enabled = true;
+                        txtPenyediaB.Enabled = true;
                         grbBarang.BackColor = System.Drawing.Color.Silver;
                         break;
                 }
@@ -179,7 +180,7 @@ namespace Program
                 switch (status_barang)
                 {
                     case global.StatusBarang.edit_barang:
-                        if (txtIdB.Text == string.Empty || txtNamaB.Text == string.Empty || txtSatuanB.Text == string.Empty || txtHargaB.Text == string.Empty)
+                        if (txtIdB.Text == string.Empty || txtNamaB.Text == string.Empty || txtSatuanB.Text == string.Empty || txtHargaB.Text == string.Empty || txtPenyediaB.Text == string.Empty)
                         {
                             MessageBox.Show("ISI DATA DENGAN LENGKAP !!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return false;
@@ -188,14 +189,6 @@ namespace Program
                         {
                             MessageBox.Show("ISI DATA DENGAN BENAR !!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return false;
-                        }
-                        foreach (DataRow row in data_barang.Rows)
-                        {
-                            if (row["ID_Barang"].ToString().Trim() == txtIdB.Text.Trim() || row["Nama_Barang"].ToString().ToLower().Trim() == txtNamaB.Text.ToLower().Trim())
-                            {
-                                MessageBox.Show("ID / NAMA BARANG SUDAH TERDAFTAR !!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return false;
-                            }
                         }
                         break;
                     case global.StatusBarang.edit_detail_barang:
@@ -217,7 +210,7 @@ namespace Program
 
         private void clear()
         {
-            lblID.Text = "[ ID Barang ]";
+            lblID.Text = "[ Kode Barang ]";
             cmbNamaBarang.SelectedIndex = 0;
             lblSatuan.Text = data_barang.Rows[cmbNamaBarang.SelectedIndex]["Satuan"].ToString();
             dtpTanggal.Value = DateTime.Today;
@@ -227,6 +220,7 @@ namespace Program
             txtNamaB.Text = string.Empty;
             txtSatuanB.Text = string.Empty;
             txtHargaB.Text = string.Empty;
+            txtPenyediaB.Text = string.Empty;
         }
         #endregion
 
@@ -243,17 +237,18 @@ namespace Program
                 switch (status_barang)
                 {
                     case global.StatusBarang.edit_barang:
-                        txtIdB.Text = dgv_row.Cells["ID_Barang"].Value.ToString();
+                        txtIdB.Text = dgv_row.Cells["Kode Barang"].Value.ToString();
                         txtIdB.Enabled = false;
-                        txtNamaB.Text = dgv_row.Cells["Nama_Barang"].Value.ToString();
+                        txtNamaB.Text = dgv_row.Cells["Nama Barang"].Value.ToString();
                         txtSatuanB.Text = dgv_row.Cells["Satuan"].Value.ToString();
                         txtHargaB.Text = dgv_row.Cells["Harga"].Value.ToString();
+                        txtPenyediaB.Text = dgv_row.Cells["penyedia"].Value.ToString();
                         break;
                     case global.StatusBarang.edit_detail_barang:
                         lblID.Text = dgv_row.Cells["ID"].Value.ToString();
                         for (int i = 0; i < cmbNamaBarang.Items.Count; i++)
                         {
-                            if (cmbNamaBarang.Items[i].ToString() == dgv_row.Cells["Nama_Barang"].Value.ToString())
+                            if (cmbNamaBarang.Items[i].ToString() == dgv_row.Cells["Nama Barang"].Value.ToString())
                             {
                                 cmbNamaBarang.SelectedIndex = i; 
                                 break;
@@ -284,9 +279,17 @@ namespace Program
                         case global.StatusBarang.edit_barang:
                             if (notnull)
                             {
+                                foreach (DataRow row in data_barang.Rows)
+                                {
+                                    if (row["Kode Barang"].ToString().Trim() == txtIdB.Text.Trim())
+                                    {
+                                        MessageBox.Show("KODE BARANG SUDAH TERDAFTAR !!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        return;
+                                    }
+                                }
                                 if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                                 {
-                                    if (koneksi.query_barang("INSERT", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, int.Parse(txtHargaB.Text)))
+                                    if (koneksi.query_barang("INSERT", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, float.Parse(txtHargaB.Text), txtPenyediaB.Text))
                                     {
                                         update_tabel();
                                         clear();
@@ -308,7 +311,7 @@ namespace Program
                                         _id = int.Parse(_jml_barang.Rows[0]["max_id"].ToString()) + 1;
                                     }
                                     _jml_barang.Dispose();
-                                    var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["ID_Barang"].ToString();
+                                    var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["Kode Barang"].ToString();
                                     var _id_usr = global.id;
                                     var _tgl = dtpTanggal.Value;
                                     var _qty = int.Parse(txtQty.Text);
@@ -336,7 +339,7 @@ namespace Program
                     {
                         if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UPDATE DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            if (koneksi.query_barang("UPDATE", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, int.Parse(txtHargaB.Text)))
+                            if (koneksi.query_barang("UPDATE", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, float.Parse(txtHargaB.Text), txtPenyediaB.Text))
                             {
                                 update_tabel();
                                 clear();
@@ -352,7 +355,7 @@ namespace Program
                         if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UPDATE DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             var _id = int.Parse(lblID.Text);
-                            var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["ID_Barang"].ToString();
+                            var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["Kode Barang"].ToString();
                             var _id_usr = global.id;
                             var _tgl = dtpTanggal.Value;
                             var _qty = int.Parse(txtQty.Text);
@@ -381,7 +384,7 @@ namespace Program
                         {
                             if (MessageBox.Show("APAKAH ANDA INGIN MENGHAPUS DATA ?", "HAPUS DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
-                                if (koneksi.query_barang("DELETE", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, int.Parse(txtHargaB.Text)))
+                                if (koneksi.query_barang("DELETE", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, float.Parse(txtHargaB.Text), ""))
                                 {
                                     update_tabel();
                                     clear();
@@ -397,12 +400,12 @@ namespace Program
                     { MessageBox.Show("PILIH DATA YANG INGIN DIHAPUS !!!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                     break;
                 case global.StatusBarang.edit_detail_barang:
-                    if (lblID.Text != "[ ID Barang ]")
+                    if (lblID.Text != "[ Kode Barang ]")
                     {
                         if (MessageBox.Show("APAKAH ANDA INGIN MENGHAPUS DATA ?", "HAPUS DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             var _id = int.Parse(lblID.Text);
-                            var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["ID_Barang"].ToString();
+                            var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["Kode Barang"].ToString();
                             var _id_usr = global.id;
                             var _tgl = dtpTanggal.Value;
                             var _qty = int.Parse(txtQty.Text);

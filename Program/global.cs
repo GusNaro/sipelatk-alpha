@@ -10,7 +10,7 @@ namespace Program
     {
         public enum StatusBarang { edit_barang, edit_detail_barang }
         public enum StatusButtonSimpan { simpan, tambah }
-        public enum JenisLaporan { stok, pengadaan, pengadaan_id, pengeluaran, pengeluaran_id, divisi_umum_dan_kesekretariatan, divisi_kepatuhan, divisi_manajemen_risiko, divisi_perencanaan_strategis, divisi_sumber_daya_manusia, divisi_treasury, divisi_dana_dan_jasa, divisi_teknologi_akuntansi, divisi_kredit, skai_anti_fraud, cabang_renon, cabang_denpasar, cabang_badung, cabang_mangupura, cabang_tabanan, cabang_singaraja, cabang_seririt, cabang_negara, cabang_gianyar, cabang_ubud, cabang_klungkung, cabang_bangli, cabang_karangasem, cabang_mataram }
+        public enum JenisLaporan { stok, pengadaan, pengadaan_id, pengeluaran, pengeluaran_id, unit_kerja }
         
         public const int id_type_admin = 1;
         public const int id_type_barang = 2;

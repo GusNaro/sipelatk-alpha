@@ -18,15 +18,15 @@ namespace Program
             {
                 case global.id_type_admin:
                     value = new bool[] { true, true, true, true, true, true };
-                    nama = new string[] { "BERANDA", "USER", "BARANG", "INVENTARIS", "LAPORAN", "KELUAR" };
+                    nama = new string[] { "BERANDA", "USER", "BARANG MASUK", "BARANG KELUAR", "LAPORAN", "KELUAR" };
                     break;
                 case global.id_type_barang:
                     value = new bool[] { true, true, true, true, false, true };
-                    nama = new string[] { "BERANDA", "BARANG", "INVENTARIS", "LAPORAN", "", "KELUAR" };
+                    nama = new string[] { "BERANDA", "BARANG MASUK", "BARANG KELUAR", "LAPORAN", "", "KELUAR" };
                     break;
                 case global.id_type_inventaris:
                     value = new bool[] { true, true, true, false, false, true };
-                    nama = new string[] { "BERANDA", "INVENTARIS", "LAPORAN", "", "", "KELUAR" };
+                    nama = new string[] { "BERANDA", "BARANG KELUAR", "LAPORAN", "", "", "KELUAR" };
                     break;
                 case global.id_type_laporan:
                     value = new bool[] { true, true, false, false, false, true };

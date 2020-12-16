@@ -156,16 +156,16 @@ namespace Program
             return false;
         }
 
-        public static bool query_barang(string cmmd, string id, string nama, string satuan, int harga)
+        public static bool query_barang(string cmmd, string id, string nama, string satuan, float harga, string penyedia)
         {
             string command = "";
             switch (cmmd)
             {
                 case "INSERT":
-                    command = "INSERT INTO db_barang VALUES (@id, @nama, @satuan, @harga)";
+                    command = "INSERT INTO db_barang VALUES (@id, @nama, @satuan, @harga, @penyedia)";
                     break;
                 case "UPDATE":
-                    command = "UPDATE db_barang SET nama=(@nama), satuan=(@satuan), harga=(@harga) WHERE id = (@id)";
+                    command = "UPDATE db_barang SET nama=(@nama), satuan=(@satuan), harga=(@harga), penyedia=(@penyedia) WHERE id = (@id)";
                     break;
                 case "DELETE":
                     command = "DELETE FROM db_barang WHERE id = (@id)";
@@ -180,6 +180,7 @@ namespace Program
                 cmd.Parameters.AddWithValue("@nama", nama);
                 cmd.Parameters.AddWithValue("@satuan", satuan);
                 cmd.Parameters.AddWithValue("@harga", harga);
+                cmd.Parameters.AddWithValue("@penyedia", penyedia);
             }
             try
             {

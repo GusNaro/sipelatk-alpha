@@ -139,10 +139,10 @@ namespace Program
                 case "USER":
                     buka_form(new form_user());
                     break;
-                case "BARANG":
+                case "BARANG MASUK":
                     buka_form(new form_barang());
                     break;
-                case "INVENTARIS":
+                case "BARANG KELUAR":
                     buka_form(new form_transaksi());
                     break;
                 case "LAPORAN":
@@ -182,10 +182,10 @@ namespace Program
                 case "USER":
                     o = Resources.ResourceManager.GetObject("user_a");
                     return (Image)o;
-                case "BARANG":
+                case "BARANG MASUK":
                     o = Resources.ResourceManager.GetObject("barang_a");
                     return (Image)o;
-                case "INVENTARIS":
+                case "BARANG KELUAR":
                     o = Resources.ResourceManager.GetObject("inventaris_a");
                     return (Image)o;
                 case "LAPORAN":
@@ -213,10 +213,10 @@ namespace Program
                 case "USER":
                     o = Resources.ResourceManager.GetObject("user_b");
                     return (Image)o;
-                case "BARANG":
+                case "BARANG MASUK":
                     o = Resources.ResourceManager.GetObject("barang_b");
                     return (Image)o;
-                case "INVENTARIS":
+                case "BARANG KELUAR":
                     o = Resources.ResourceManager.GetObject("inventaris_b");
                     return (Image)o;
                 case "LAPORAN":
