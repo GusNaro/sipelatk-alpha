@@ -226,7 +226,7 @@ namespace Program
 
         #region EVENT ARGS
         private void cmbNamaBarang_SelectedIndexChanged(object sender, System.EventArgs e)
-        { lblSatuan.Text = data_barang.Rows[cmbNamaBarang.SelectedIndex]["Satuan"].ToString(); }
+        { lblSatuan.Text = data_barang.Rows[cmbNamaBarang.SelectedIndex]["SATUAN"].ToString(); }
 
         private void dgvUser_Click(object sender, DataGridViewCellEventArgs e)
         {
@@ -287,22 +287,22 @@ namespace Program
                                         return;
                                     }
                                 }
-                                if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                                {
+                                //if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                //{
                                     if (koneksi.query_barang("INSERT", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, float.Parse(txtHargaB.Text), txtPenyediaB.Text))
                                     {
                                         update_tabel();
                                         clear();
-                                        MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        //MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
-                                }
+                                //}
                             }
                             break;
                         case global.StatusBarang.edit_detail_barang:
                             if (notnull)
                             {
-                                if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                                {
+                                //if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                                //{
                                     int _id = 1;
                                     var _jml_barang = koneksi.dtb_command("SELECT id FROM db_barang_dt");
                                     if (_jml_barang.Rows.Count > 0)
@@ -320,9 +320,9 @@ namespace Program
                                     {
                                         update_tabel();
                                         clear();
-                                        MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                        //MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
-                                }
+                                //}
                             }
                             break;
                     }
@@ -337,23 +337,23 @@ namespace Program
                 case global.StatusBarang.edit_barang:
                     if (notnull)
                     {
-                        if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UPDATE DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
+                        //if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UPDATE DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        //{
                             if (koneksi.query_barang("UPDATE", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, float.Parse(txtHargaB.Text), txtPenyediaB.Text))
                             {
                                 update_tabel();
                                 clear();
                                 status_button_simpan = global.StatusButtonSimpan.simpan;
-                                MessageBox.Show("DATA BERHASIL DIRUBAH !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("DATA BERHASIL DIRUBAH !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                        }
+                        //}
                     }
                     break;
                 case global.StatusBarang.edit_detail_barang:
                     if (notnull)
                     {
-                        if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UPDATE DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
+                        //if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UPDATE DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        //{
                             var _id = int.Parse(lblID.Text);
                             var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["Kode Barang"].ToString();
                             var _id_usr = global.id;
@@ -365,9 +365,9 @@ namespace Program
                                 update_tabel();
                                 clear();
                                 status_button_simpan = global.StatusButtonSimpan.simpan;
-                                MessageBox.Show("DATA BERHASIL DIRUBAH !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("DATA BERHASIL DIRUBAH !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                        }
+                        //}
                     }
                     break;
             }
@@ -384,12 +384,15 @@ namespace Program
                         {
                             if (MessageBox.Show("APAKAH ANDA INGIN MENGHAPUS DATA ?", "HAPUS DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
-                                if (koneksi.query_barang("DELETE", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, float.Parse(txtHargaB.Text), ""))
+                                if (MessageBox.Show("APAKAH ANDA BENAR-BENAR YAKIN ? (Proses ini tidak bisa dikembalikan)", "HAPUS DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                                 {
-                                    update_tabel();
-                                    clear();
-                                    status_button_simpan = global.StatusButtonSimpan.simpan;
-                                    MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    if (koneksi.query_barang("DELETE", txtIdB.Text, txtNamaB.Text, txtSatuanB.Text, float.Parse(txtHargaB.Text), ""))
+                                    {
+                                        update_tabel();
+                                        clear();
+                                        status_button_simpan = global.StatusButtonSimpan.simpan;
+                                        //MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
                                 }
                             }
                         }
@@ -404,18 +407,21 @@ namespace Program
                     {
                         if (MessageBox.Show("APAKAH ANDA INGIN MENGHAPUS DATA ?", "HAPUS DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            var _id = int.Parse(lblID.Text);
-                            var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["Kode Barang"].ToString();
-                            var _id_usr = global.id;
-                            var _tgl = dtpTanggal.Value;
-                            var _qty = int.Parse(txtQty.Text);
-                            var _ket = txtKet.Text;
-                            if (koneksi.query_barang_dt("DELETE", _id, _id_brg, _id_usr, _tgl, _qty, _ket))
+                            if (MessageBox.Show("APAKAH ANDA BENAR-BENAR YAKIN ? (Proses ini tidak bisa dikembalikan)", "HAPUS DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
-                                update_tabel();
-                                clear();
-                                status_button_simpan = global.StatusButtonSimpan.simpan;
-                                MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                var _id = int.Parse(lblID.Text);
+                                var _id_brg = data_barang.Rows[cmbNamaBarang.SelectedIndex]["Kode Barang"].ToString();
+                                var _id_usr = global.id;
+                                var _tgl = dtpTanggal.Value;
+                                var _qty = int.Parse(txtQty.Text);
+                                var _ket = txtKet.Text;
+                                if (koneksi.query_barang_dt("DELETE", _id, _id_brg, _id_usr, _tgl, _qty, _ket))
+                                {
+                                    update_tabel();
+                                    clear();
+                                    status_button_simpan = global.StatusButtonSimpan.simpan;
+                                    //MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
                             }
                         }
                     }

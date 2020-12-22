@@ -32,3 +32,4 @@ C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.Pr
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csproj.GenerateResource.Cache
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\SIPEL - ATK BPD Bali.exe
 C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\SIPEL - ATK BPD Bali.pdb
+C:\Users\Furiez\Documents\GitHub\sipelatk-alpha\Program\obj\x86\Debug\Program.csprojResolveAssemblyReference.cache

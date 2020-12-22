@@ -94,7 +94,7 @@ namespace Program
                     sql_cmmd += "LEFT OUTER JOIN db_barang AS b ON t.id_barang = b.id ";
                     sql_cmmd += "LEFT OUTER JOIN db_user AS u ON t.id_user = u.id ";
                     sql_cmmd += "WHERE u.uk=('" + cmbList.Text + "') AND t.tgl >= (@tgl_d) AND t.tgl <= (@tgl_s)";
-                    MessageBox.Show(sql_cmmd);
+                    //MessageBox.Show(sql_cmmd);
                     return koneksi.dtb_command_time(sql_cmmd, dtpDari.Value, dtpSampai.Value);
             }
 
@@ -283,7 +283,12 @@ namespace Program
                     for (int i = 0; i < dgvLaporan.Rows.Count - 1; i++)
                     {
                         for (int j = 0; j < dgvLaporan.Columns.Count; j++)
-                        { _app.Cells[i + 2, j + 1] = dgvLaporan.Rows[i].Cells[j].Value.ToString(); }
+                        {
+                            if (dgvLaporan.Columns[j].HeaderText == "TANGGAL")
+                            { _app.Cells[i + 2, j + 1] = DateTime.Parse(dgvLaporan.Rows[i].Cells[j].Value.ToString()).ToShortDateString(); }
+                            else
+                            { _app.Cells[i + 2, j + 1] = dgvLaporan.Rows[i].Cells[j].Value.ToString(); }
+                        }
                     }
                     _app.Columns.AutoFit();
                     _app.Visible = true;

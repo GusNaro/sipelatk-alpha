@@ -30,15 +30,15 @@ namespace Program
                 case global.StatusButtonSimpan.simpan:
                     if (notnull)
                     {
-                        if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
+                        //if (MessageBox.Show("APAKAH ANDA INGIN MENYIMPAN DATA ?", "SIMPAN DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        //{
                             var berhasil = koneksi.user_query("INSERT", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
                             if (berhasil)
                             {
                                 load_user();
-                                MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("DATA BERHASIL DISIMPAN !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
-                        }
+                        //}
                     }
                     break;
                 case global.StatusButtonSimpan.tambah:
@@ -52,16 +52,16 @@ namespace Program
         {
             if (notnull)
             {
-                if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UBAH DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                //if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UBAH DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                //{
                     var berhasil = koneksi.user_query("UPDATE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
                     if (berhasil)
                     {
                         load_user();
                         sts_btn_simpan = global.StatusButtonSimpan.simpan;
-                        MessageBox.Show("DATA BERHASIL DIUPDATE !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show("DATA BERHASIL DIUPDATE !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                }
+                //}
             }
         }
 
@@ -69,14 +69,17 @@ namespace Program
         {
             if (txtNRK.Text != string.Empty)
             {
-                if (MessageBox.Show("APAKAH ANDA INGIN MENGUBAH DATA ?", "UBAH DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("APAKAH ANDA INGIN MENGHAPUS DATA ?", "HAPUS DATA", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    var berhasil = koneksi.user_query("DELETE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
-                    if (berhasil)
+                    if (MessageBox.Show("APAKAH ANDA BENAR-BENAR YAKIN ? (Proses ini tidak bisa dikembalikan)", "HAPUS DATA", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        sts_btn_simpan = global.StatusButtonSimpan.simpan;
-                        load_user();
-                        MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        var berhasil = koneksi.user_query("DELETE", txtNRK.Text, txtNama.Text, txtPass1.Text, cmbHak.SelectedIndex + 1, cmbCabang.Items[cmbCabang.SelectedIndex].ToString());
+                        if (berhasil)
+                        {
+                            sts_btn_simpan = global.StatusButtonSimpan.simpan;
+                            load_user();
+                            //MessageBox.Show("DATA BERHASIL DIHAPUS !!!", "INFORMASI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }

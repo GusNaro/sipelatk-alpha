@@ -47,6 +47,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grbBarang = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtPenyediaB = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtHargaB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.txtNamaB = new System.Windows.Forms.TextBox();
             this.txtIdB = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtPenyediaB = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             this.grbDetail.SuspendLayout();
             this.grbBarang.SuspendLayout();
@@ -193,6 +193,7 @@
             this.cmbNamaBarang.Name = "cmbNamaBarang";
             this.cmbNamaBarang.Size = new System.Drawing.Size(402, 28);
             this.cmbNamaBarang.TabIndex = 12;
+            this.cmbNamaBarang.SelectedIndexChanged += new System.EventHandler(this.cmbNamaBarang_SelectedIndexChanged);
             // 
             // txtKet
             // 
@@ -281,6 +282,24 @@
             this.grbBarang.TabStop = false;
             this.grbBarang.Text = "Jenis Barang";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.Location = new System.Drawing.Point(18, 174);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 20);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Penyedia";
+            // 
+            // txtPenyediaB
+            // 
+            this.txtPenyediaB.Location = new System.Drawing.Point(146, 174);
+            this.txtPenyediaB.Multiline = true;
+            this.txtPenyediaB.Name = "txtPenyediaB";
+            this.txtPenyediaB.Size = new System.Drawing.Size(199, 63);
+            this.txtPenyediaB.TabIndex = 21;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -362,24 +381,6 @@
             this.label10.TabIndex = 15;
             this.label10.Text = "PINDAH";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtPenyediaB
-            // 
-            this.txtPenyediaB.Location = new System.Drawing.Point(146, 174);
-            this.txtPenyediaB.Multiline = true;
-            this.txtPenyediaB.Name = "txtPenyediaB";
-            this.txtPenyediaB.Size = new System.Drawing.Size(199, 63);
-            this.txtPenyediaB.TabIndex = 21;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label11.Location = new System.Drawing.Point(18, 174);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 20);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Penyedia";
             // 
             // form_barang
             // 
